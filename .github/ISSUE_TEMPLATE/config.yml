@@ -3,5 +3,5 @@ contact_links:
     url: https://biosimulators.org/help
     about: Information about using BioSimulators and contributing simulators
   - name: Development team
-    url: mailto:info@biosimulators.org
+    url: 'mailto:info@biosimulators.org'
     about: Contact the development team
