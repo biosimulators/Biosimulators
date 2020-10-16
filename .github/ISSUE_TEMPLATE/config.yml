@@ -1,0 +1,7 @@
+contact_links:
+  - name: Tutorial and help
+    url: https://biosimulators.org/help
+    about: Information about using BioSimulators and contributing simulators
+  - name: Development team
+    url: info@biosimulators.org
+    about: Contact the development team
