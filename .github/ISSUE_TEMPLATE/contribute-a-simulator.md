@@ -7,11 +7,15 @@ assignees: ''
 
 ---
 
+## Instructions
+
 Please use this issue to contribute a containerized simulation tool, contribute another version of a simulation tool, or update a version of a simulation tool. 
 
 Instructions for containerizing simulation tools and examples are available at https://biosimulators.org/help.
 
 After you submit this issue, we will review your simulation tool and discuss any necessary changes here. Once approved, we will add your simulation tool to the BioSimulators registry and it will be advertised on the BioSimulators web application.
+
+## Submission
 
 **What is the name of your simulation tool?**
 E.g., COPASI
