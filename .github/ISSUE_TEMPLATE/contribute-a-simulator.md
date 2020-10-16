@@ -2,7 +2,7 @@
 name: Contribute a simulator or another version of a simulator
 about: Contribute a containerized simulation tool, contribute another version of a simulation tool, or update a version of a simulation tool.
 title: ''
-labels: submit simulator
+labels: 'submit simulator'
 assignees: ''
 
 ---
