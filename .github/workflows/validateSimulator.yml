@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Install processing utilities
       run: |
-        apt-get install python3 python3-pip
+        sudo apt-get install python3 python3-pip
         pip install https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions]
     - name: Process submission
       env:
