@@ -37,6 +37,6 @@ Please follow the template YAML syntax below.
 ---
 name: COPASI
 version: 4.27.214
-specUrl: https://github.com/biosimulators/Biosimulators_COPASI/blob/master/properties.json
+specificationsUrl: https://github.com/biosimulators/Biosimulators_COPASI/blob/master/properties.json
 
 ---
