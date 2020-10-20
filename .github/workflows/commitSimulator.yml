@@ -20,7 +20,7 @@ jobs:
         python3.7 -m pip install git+https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions]
     - name: Commit submission
       env:
-        ISSUE_NUMBER: github.event.issue.number
+        ISSUE_NUMBER: ${{ github.event.issue.number }}
       run: |
         python3.7 - <<-EOF
         from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateCommitSimulatorCiActions
