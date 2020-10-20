@@ -12,14 +12,16 @@ jobs:
     steps:
     - name: Install processing utilities
       run: |
-        sudo apt-get install -y --no-install-recommends git python3 python3-pip
-        pip3 install -U setuptools
-        pip3 install git+https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions]
+        sudo apt-get install -y --no-install-recommends software-properties-common
+        sudo add-apt-repository -y ppa:deadsnakes/ppa
+        sudo apt-get install -y --no-install-recommends git python3.7 python3.7-pip
+        pip3.7 install -U setuptools
+        pip3.7 install git+https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions]
     - name: Commit submission
       env:
         ISSUE_NUMBER: github.event.issue.number
       run: |
-        python3 - <<-EOF
+        python3.7 - <<-EOF
           from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateCommitSimulatorCiActions
           ValidateCommitSimulatorCiActions().commit()
         EOF
