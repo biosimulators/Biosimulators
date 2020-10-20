@@ -1,0 +1,24 @@
+name: Validate simulator
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  validate:
+    name: Validate simulator
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.event.issues.labels.*.name, 'Submit simulator' }}
+    steps:
+    - name: Install processing utilities
+      run: |
+        apt-get install python3 python3-pip
+        pip install https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions]
+    - name: Process submission
+      env:
+        ISSUE_NUMBER: github.event.issue.number
+      run: |
+        python - <<-EOF
+          from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateCommitSimulatorCiActions
+          ValidateCommitSimulatorCiActions().validate()
+        EOF
