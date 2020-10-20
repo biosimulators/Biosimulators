@@ -6,13 +6,14 @@ on:
 
 jobs:
   integrate:
-    name: Commit simulator
+    name: Commit
     runs-on: ubuntu-latest
     if: ${{ contains(github.event.issue.labels.*.name, 'Submit simulator') }}
     steps:
     - name: Install processing utilities
       run: |
         sudo apt-get install -y --no-install-recommends git python3 python3-pip
+        pip3 install -U setuptools
         pip3 install git+https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions]
     - name: Commit submission
       env:
