@@ -8,7 +8,7 @@ jobs:
   integrate:
     name: Commit
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.issue.labels.*.name, 'Submit simulator') && contains(github.event.issue.labels.*.name, 'Approved') }}
+    if: ${{ contains(github.event.issue.labels.*.name, 'Submit simulator') && contains(github.event.issue.labels.*.name, 'Validated') && contains(github.event.issue.labels.*.name, 'Approved') }}
     steps:
     - name: Install processing utilities
       run: |
