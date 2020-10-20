@@ -2,13 +2,13 @@ name: Commit simulator
 
 on:
   issues:
-    types: [closed]
+    types: [labeled]
 
 jobs:
   integrate:
     name: Commit
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.issue.labels.*.name, 'Submit simulator') }}
+    if: ${{ contains(github.event.issue.labels.*.name, 'Submit simulator') && contains(github.event.issue.labels.*.name, 'Approved') }}
     steps:
     - name: Install processing utilities
       run: |
