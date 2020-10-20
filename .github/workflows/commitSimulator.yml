@@ -22,7 +22,7 @@ jobs:
       env:
         ISSUE_NUMBER: github.event.issue.number
       run: |
-        python3 - <<-EOF
-          from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateCommitSimulatorCiActions
-          ValidateCommitSimulatorCiActions().commit()
+        python3.7 - <<-EOF
+        from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateCommitSimulatorCiActions
+        ValidateCommitSimulatorCiActions().commit()
         EOF
