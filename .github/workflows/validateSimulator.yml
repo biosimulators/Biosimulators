@@ -8,7 +8,7 @@ jobs:
   validate:
     name: Validate simulator
     runs-on: ubuntu-latest
-    if: ${{ contains(github.event.issues.labels.*.name, 'Submit simulator' }}
+    if: ${{ contains(github.event.issues.labels.*.name, 'Submit simulator') }}
     steps:
     - name: Install processing utilities
       run: |
