@@ -33,9 +33,9 @@ Instructions for containerizing simulation tools and examples are available at h
 Please follow the template YAML syntax below.
 
 ---
-name: COPASI
-version: 4.27.214
-specificationsUrl: https://raw.githubusercontent.com/biosimulators/Biosimulators_COPASI/master/properties.json
+name: tellurium
+version: 2.4.1
+specificationsUrl: https://raw.githubusercontent.com/biosimulators/Biosimulators_tellurium/2.4.1/properties.json
 
 ---
 
