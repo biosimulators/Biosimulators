@@ -54,3 +54,8 @@ Once you submit this issue, BioSimulators will use the following workflow to val
 6. If there are any concerns about your submission, the BioSimulations Team will use this issue to communicate with you about resolving them.
 7. Once your simulator is approved, the BioSimulations Team will add the label `Approved` to this issue. 
 8. The simulator will automatically be committed to the BioSimulations database and the issue will automatically be closed.
+
+
+## Re-submission change list
+
+If you need to revise your simulator to pass the validation, please use this section to briefly describe the changes that you made.
