@@ -10,16 +10,35 @@ jobs:
     runs-on: ubuntu-latest # includes Docker
     if: ${{ contains(github.event.issue.labels.*.name, 'Submit simulator') }}
     steps:
+      - name: Checkout Biosimulations_utils
+        uses: actions/checkout@v2
+        with:
+          repository: biosimulations/Biosimulations_utils
+          ref: align-with-api
+
       - name: Install Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.7'
+
+      - name: Setup pip cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.txt') }}-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.optional.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install pip and setuptools
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade setuptools
+
       - name: Install simulator validation utilities
-        run: python -m pip install git+https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions]
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          python -m pip install .[ci-actions]
+
       - name: Process submission
         env:
           GH_REPO: ${{ github.repository }}
@@ -27,8 +46,7 @@ jobs:
           GH_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_ISSUES_USER: ${{ secrets.GH_ISSUES_USER }}
           GH_ISSUES_ACCESS_TOKEN: ${{ secrets.GH_ISSUES_ACCESS_TOKEN }}
+        shell: python
         run: |
-          python - <<-EOF
           from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateSimulatorAction
           ValidateSimulatorAction().run()
-          EOF
