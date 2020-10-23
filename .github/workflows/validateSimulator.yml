@@ -26,11 +26,13 @@ jobs:
       run: python3.7 -m pip install git+https://github.com/biosimulations/Biosimulations_utils.git@align-with-api#egg=Biosimulations_utils[ci-actions,docker]
     - name: Process submission
       env:
-        ISSUE_NUMBER: ${{ github.event.issue.number }}
+        GH_REPO: ${{ github.repository }}
+        GH_ACTION_RUN_ID: ${{ github.run_id }}
+        GH_ISSUE_NUMBER: ${{ github.event.issue.number }}
         GH_ISSUES_USER: ${{ secrets.GH_ISSUES_USER }}
         GH_ISSUES_ACCESS_TOKEN: ${{ secrets.GH_ISSUES_ACCESS_TOKEN }}
       run: |
         python3.7 - <<-EOF
-        from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateCommitSimulatorCiActions
-        ValidateCommitSimulatorCiActions().validate()
+        from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateSimulatorAction
+        ValidateSimulatorAction().run()
         EOF
