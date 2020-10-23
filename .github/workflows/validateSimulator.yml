@@ -34,8 +34,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade setuptools
 
-      - run: python -m pip -V
-
       - name: Install simulator validation utilities
         run: |
           cd ${GITHUB_WORKSPACE}
