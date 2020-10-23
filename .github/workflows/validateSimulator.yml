@@ -37,7 +37,7 @@ jobs:
       - name: Install simulator validation utilities
         run: |
           cd ${GITHUB_WORKSPACE}
-          python -m pip install -U .[ci-actions]
+          python -m pip install -U .[ci-actions,docker]
 
       - name: Process submission
         env:
