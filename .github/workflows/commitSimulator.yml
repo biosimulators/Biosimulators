@@ -55,4 +55,4 @@ jobs:
         shell: python
         run: |
           from Biosimulations_utils.ci_actions.validate_commit_simulator import CommitSimulatorAction
-          ValidateSimulatorAction().run()
+          CommitSimulatorAction().run()
