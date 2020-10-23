@@ -14,6 +14,7 @@ jobs:
             && contains(github.event.issue.labels.*.name, 'Validated')
             && !contains(github.event.issue.labels.*.name, 'Action error')
             && contains(github.event.issue.labels.*.name, 'Approved')
+            && github.event.issue.state == 'open'
         }}
     steps:
       - name: Checkout Biosimulations_utils
