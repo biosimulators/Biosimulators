@@ -24,7 +24,7 @@ jobs:
       - name: Setup pip cache
         uses: actions/cache@v2
         with:
-          path: ~/.cache/pip
+          path: /opt/hostedtoolcache/Python
           key: ${{ runner.os }}-pip-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.txt') }}-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.optional.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
