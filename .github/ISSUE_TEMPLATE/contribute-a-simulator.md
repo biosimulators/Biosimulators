@@ -35,7 +35,7 @@ Please follow the template YAML syntax below.
 ---
 name: tellurium
 version: 2.1.6
-specificationsUrl: https://raw.githubusercontent.com/biosimulators/Biosimulators_tellurium/2.1.6/properties.json
+specificationsUrl: https://raw.githubusercontent.com/biosimulators/Biosimulators_tellurium/2.1.6/biosimulators.json
 
 ---
 
