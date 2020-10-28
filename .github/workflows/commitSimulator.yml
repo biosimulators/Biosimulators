@@ -51,6 +51,8 @@ jobs:
           GH_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_ISSUES_USER: ${{ secrets.GH_ISSUES_USER }}
           GH_ISSUES_ACCESS_TOKEN: ${{ secrets.GH_ISSUES_ACCESS_TOKEN }}
+          BIOSIMULATORS_API_CLIENT_ID: ${{ secrets.BIOSIMULATORS_API_CLIENT_ID }}
+          BIOSIMULATORS_API_CLIENT_SECRET: ${{ secrets.BIOSIMULATORS_API_CLIENT_SECRET }}
         shell: python
         run: |
           from Biosimulations_utils.ci_actions.validate_commit_simulator import CommitSimulatorAction
