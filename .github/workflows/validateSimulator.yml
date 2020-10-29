@@ -48,6 +48,8 @@ jobs:
           GH_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_ISSUES_USER: ${{ secrets.GH_ISSUES_USER }}
           GH_ISSUES_ACCESS_TOKEN: ${{ secrets.GH_ISSUES_ACCESS_TOKEN }}
+          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
         shell: python
         run: |
           from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateSimulatorAction
