@@ -1,6 +1,6 @@
 ---
-name: Request a modeling framework, algorithm, format, or simulator
-about: Request support for an additional modeling framework, algorithm, format, or simulation tool
+name: Request support for a modeling framework, algorithm, format, or simulator
+about: Request support for executing an additional modeling framework, algorithm, format, or simulation tool
 title: ''
 labels: enhancement
 assignees: ''
