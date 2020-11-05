@@ -1,18 +1,17 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Request an EDAM term for a modeling format
-    url: https://github.com/edamontology/edamontology/issues/new/choose
-    about: Please direct requests for new terms for modeling formats to EDAM.
+  - name: Request an SBO term for a modeling framework
+    url: https://sourceforge.net/p/sbo/term-request/
+    about: Please direct requests for new terms for modeling frameworks to KiSAO.
 
   - name: Request a KiSAO term for a simulation algorithm, characteristic, or parameter
     url: https://sourceforge.net/p/kisao/feature-requests/new/
     about: Please direct requests for new terms for algorithms, characteristics, and parameters to KiSAO.
 
-  - name: Request an SBO term for a modeling framework
-    url: https://sourceforge.net/p/sbo/term-request/
-    about: Please direct requests for new terms for modeling frameworks to KiSAO.
+  - name: Request an EDAM term for a modeling format
+    url: https://github.com/edamontology/edamontology/issues/new/choose
+    about: Please direct requests for new terms for modeling formats to EDAM.
 
   - name: Request an SPDX term for a license
     url: https://tools.spdx.org/app/submit_new_license/
     about: Please direct requests for new terms for licenses to SPDX.
-
