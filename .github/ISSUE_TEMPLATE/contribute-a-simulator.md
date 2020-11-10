@@ -34,13 +34,14 @@ Instructions for containerizing simulation tools and examples are available at h
 
 ## Submission
 
-**What is the name, version, and URL of the specifications of your simulation tool?**
-Please follow the template YAML syntax below.
+**What is the name, version, and URL of the specifications of your simulation tool? Should BioSimulators validate your Docker image?**
+Please follow the YAML template below.
 
 ---
 name: tellurium
 version: 2.1.6
 specificationsUrl: https://raw.githubusercontent.com/biosimulators/Biosimulators_tellurium/2.1.6/biosimulators.json
+validateImage: true
 
 ---
 
