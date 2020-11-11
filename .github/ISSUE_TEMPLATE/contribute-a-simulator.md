@@ -29,6 +29,7 @@ Instructions for containerizing simulation tools and examples are available at h
 - [ ] Optional, the simulation tool is available through a software repository such as CRAN or PyPI
 - [ ] Optional, examples, tutorials, and documentation for the simulation tool are publicly available
 - [ ] Optional, the simulation tool is registered with [bio.tools](https://bio.tools/)
+- [ ] Optional, the container uses [labels to provide Open Containers Initiative-compliant metadata](https://biosimulators.org/help)
 - [ ] Optional, the container uses [labels to provide BioContainers-compliant metadata](https://biosimulators.org/help)
 - [ ] Optional, the container is registered with [BioContainers](https://biocontainers.pro/)
 
