@@ -15,7 +15,7 @@ This repository serves several function:
 - This repository is a central place for simulation software developers to submit simulation tools to the BioSimulators registry. 
 - This repository contains code for automated verification of the capabilities of containerized simulation tools.
 
-The code for the BioSimulators web application, REST API, and database is in the [Biosimulations repository](https://github.com/biosimulations/Biosimulations). The code for verifying the capabilities and accuracy of containerized simulation tools is in the [Biosimulators_test_suite repository](https://github.com/biosimulators/Biosimulators_test_suite).
+The code for the BioSimulators web application, REST API, and database is in the [Biosimulations repository](https://github.com/biosimulations/Biosimulations). The code for verifying the capabilities and accuracy of containerized simulation tools is in the [BioSimulators test suite repository](https://github.com/biosimulators/Biosimulators_test_suite).
 
 ## Getting started
 
