@@ -1,22 +1,22 @@
-name: Validate simulator
+name: Validate and/or commit simulator
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, labeled, edited]
 
 jobs:
-  validate:
-    name: Validate
+  validateCommit:
+    name: Validate and/or commit simulator
     runs-on: ubuntu-latest # includes Docker
     if: |
       contains(github.event.issue.labels.*.name, 'Submit simulator') &&
       github.event.issue.state == 'open'
     steps:
-      - name: Checkout Biosimulations_utils
+      - name: Checkout BioSimulations utils
         uses: actions/checkout@v2
         with:
-          repository: biosimulations/Biosimulations_utils
-          ref: align-with-api
+          repository: biosimulators/biosimulators_test_suite
+          fetch-depth: 1
 
       - name: Install Python
         uses: actions/setup-python@v2
@@ -36,12 +36,17 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade setuptools
 
+      - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
+        uses: eWaterCycle/setup-singularity@v5
+        with:
+          singularity-version: 3.6.4
+
       - name: Install simulator validation utilities
         run: |
           cd ${GITHUB_WORKSPACE}
-          python -m pip install -U .[ci-actions]
+          python -m pip install -U .[all]
 
-      - name: Process submission
+      - name: Validate and commit simulator
         env:
           GH_REPO: ${{ github.repository }}
           GH_ACTION_RUN_ID: ${{ github.run_id }}
@@ -50,7 +55,9 @@ jobs:
           GH_ISSUES_ACCESS_TOKEN: ${{ secrets.GH_ISSUES_ACCESS_TOKEN }}
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
           DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+          BIOSIMULATORS_API_CLIENT_ID: ${{ secrets.BIOSIMULATORS_API_CLIENT_ID }}
+          BIOSIMULATORS_API_CLIENT_SECRET: ${{ secrets.BIOSIMULATORS_API_CLIENT_SECRET }}
         shell: python
         run: |
-          from Biosimulations_utils.ci_actions.validate_commit_simulator import ValidateSimulatorAction
-          ValidateSimulatorAction().run()
+          from biosimulators_test_suite.validate_commit_workflow import ValidateCommitSimulatorGitHubAction
+          ValidateCommitSimulatorGitHubAction().run()
