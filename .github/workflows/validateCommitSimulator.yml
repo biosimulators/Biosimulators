@@ -55,6 +55,19 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           python -m pip install -e .[all]
+          python -m pip install -U "git+https://github.com/biosimulators/Biosimulators_utils.git#egg=biosimulators_utils"
+
+      - name: Login into Docker registries
+        run: |
+          # Docker Hub
+          docker login \
+            --username ${{ secrets.DOCKER_HUB_USERNAME }} \
+            --password ${{ secrets.DOCKER_HUB_TOKEN }}
+
+          # BioSimulators Docker registry (GHCR)
+          docker login ${{ secrets.DOCKER_REGISTRY_URL }} \
+            --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} \
+            --password ${{ secrets.DOCKER_REGISTRY_TOKEN }}
 
       - name: Validate and commit simulator
         env:
