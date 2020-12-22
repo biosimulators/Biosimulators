@@ -9,15 +9,18 @@ jobs:
     name: Validate and/or commit simulator
     runs-on: ubuntu-latest # includes Docker
     if: |
-      contains(github.event.issue.labels.*.name, 'Validate/submit simulator') &&
       github.event.issue.state == 'open'
+      && contains(github.event.issue.labels.*.name, 'Validate/submit simulator')
+      && (
+        github.event.action == 'opened'
+        || github.event.action == 'edited'
+        || (
+          github.event.action == 'labeled'
+          && github.event.label.name == 'Approved'
+          && github.event.issue.assignee
+          )
+      )
     steps:
-      - name: Checkout BioSimulations utils
-        uses: actions/checkout@v2
-        with:
-          repository: biosimulators/biosimulators_test_suite
-          fetch-depth: 1
-
       - name: Install Python
         uses: actions/setup-python@v2
         with:
@@ -41,10 +44,17 @@ jobs:
         with:
           singularity-version: 3.6.4
 
+      - name: Checkout BioSimulators utils
+        uses: actions/checkout@v2
+        with:
+          repository: biosimulators/biosimulators_test_suite
+          fetch-depth: 1
+
       - name: Install simulator validation utilities
         run: |
           cd ${GITHUB_WORKSPACE}
           python -m pip install -U .[all]
+          python -m pip install git+https://github.com/biosimulators/biosimulators_utils.git#egg=biosimulators_utils
 
       - name: Validate and commit simulator
         env:
