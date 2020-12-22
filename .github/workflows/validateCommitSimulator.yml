@@ -49,12 +49,13 @@ jobs:
         with:
           repository: biosimulators/biosimulators_test_suite
           fetch-depth: 1
+          # todo: pull deploy branch
 
       - name: Install simulator validation utilities
+        working-directory: ${{ github.workspace }}
         run: |
-          cd ${GITHUB_WORKSPACE}
           python -m pip install -U .[all]
-          python -m pip install git+https://github.com/biosimulators/biosimulators_utils.git#egg=biosimulators_utils
+          python -m pip install "git+https://github.com/biosimulators/biosimulators_utils.git#egg=biosimulators_utils" # todo: remove
 
       - name: Validate and commit simulator
         env:
@@ -68,6 +69,7 @@ jobs:
           BIOSIMULATORS_API_CLIENT_ID: ${{ secrets.BIOSIMULATORS_API_CLIENT_ID }}
           BIOSIMULATORS_API_CLIENT_SECRET: ${{ secrets.BIOSIMULATORS_API_CLIENT_SECRET }}
         shell: python
+        working-directory: ${{ github.workspace }}
         run: |
           from biosimulators_test_suite.validate_commit_workflow import ValidateCommitSimulatorGitHubAction
           ValidateCommitSimulatorGitHubAction().run()
