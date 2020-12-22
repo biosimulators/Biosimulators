@@ -17,9 +17,9 @@ jobs:
         || (
           github.event.action == 'labeled'
           && github.event.label.name == 'Approved'
-          && github.event.issue.assignee
           )
       )
+      && github.event.sender != 'biosimulators-daemon'
     steps:
       - name: Install Python
         uses: actions/setup-python@v2
@@ -71,5 +71,7 @@ jobs:
         shell: python
         working-directory: ${{ github.workspace }}
         run: |
+          ls
+          ls examples
           from biosimulators_test_suite.validate_commit_workflow import ValidateCommitSimulatorGitHubAction
           ValidateCommitSimulatorGitHubAction().run()
