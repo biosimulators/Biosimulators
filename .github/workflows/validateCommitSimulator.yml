@@ -49,13 +49,12 @@ jobs:
         with:
           repository: biosimulators/biosimulators_test_suite
           fetch-depth: 1
-          # todo: pull deploy branch
+          # todo: checkout to `deploy` branch
 
       - name: Install simulator validation utilities
         working-directory: ${{ github.workspace }}
         run: |
           python -m pip install -e .[all]
-          python -m pip install -U "git+https://github.com/biosimulators/Biosimulators_utils.git#egg=biosimulators_utils"
 
       - name: Login into Docker registries
         run: |
