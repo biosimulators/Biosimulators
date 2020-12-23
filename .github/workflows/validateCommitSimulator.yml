@@ -84,5 +84,5 @@ jobs:
         shell: python
         working-directory: ${{ github.workspace }}
         run: |
-          from biosimulators_test_suite.validate_commit_workflow import ValidateCommitSimulatorGitHubAction
+          from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction
           ValidateCommitSimulatorGitHubAction().run()
