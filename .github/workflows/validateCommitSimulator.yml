@@ -49,7 +49,7 @@ jobs:
         with:
           repository: biosimulators/biosimulators_test_suite
           fetch-depth: 1
-          # todo: checkout to `deploy` branch
+          ref: deploy
 
       - name: Install simulator validation utilities
         working-directory: ${{ github.workspace }}
