@@ -19,7 +19,7 @@ jobs:
           && github.event.label.name == 'Approved'
           )
       )
-      && github.event.sender != 'biosimulators-daemon'
+      && github.event.sender.login != 'biosimulators-daemon'
     steps:
       - name: Install Python
         uses: actions/setup-python@v2
