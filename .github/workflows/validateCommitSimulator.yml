@@ -16,7 +16,7 @@ jobs:
         || github.event.action == 'edited'
         || (
           github.event.action == 'labeled'
-          && github.event.label.name == 'Approved'
+          && (github.event.label.name == 'Validate/submit simulator' || github.event.label.name == 'Approved')
           )
       )
       && github.event.sender.login != 'biosimulators-daemon'
