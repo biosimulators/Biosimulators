@@ -12,8 +12,7 @@ jobs:
       github.event.issue.state == 'open'
       && contains(github.event.issue.labels.*.name, 'Validate/submit simulator')
       && (
-        github.event.action == 'opened'
-        || github.event.action == 'edited'
+        github.event.action == 'edited'
         || (
             github.event.action == 'labeled'
             && github.event.label.name == 'Validate/submit simulator'
