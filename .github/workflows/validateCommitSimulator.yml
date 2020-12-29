@@ -2,7 +2,7 @@ name: Validate and/or commit simulator
 
 on:
   issues:
-    types: [opened, labeled, edited]
+    types: [labeled, edited]
 
 jobs:
   validateCommit:
