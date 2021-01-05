@@ -84,7 +84,7 @@ jobs:
           DOCKER_REGISTRY_TOKEN: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
           BIOSIMULATORS_API_CLIENT_ID: ${{ secrets.BIOSIMULATORS_API_CLIENT_ID }}
           BIOSIMULATORS_API_CLIENT_SECRET: ${{ secrets.BIOSIMULATORS_API_CLIENT_SECRET }}
-          BIOSIMULATORS_API_ENDPOINT: https://api.biosimulators.dev/ # TODO: change to biosimulators.org
+          # BIOSIMULATORS_API_ENDPOINT: https://api.biosimulators.dev/ # uncomment to use the dev deployment of the BioSimulators API
           BIOSIMULATORS_AUDIENCE: api.biosimulators.org
         shell: python
         working-directory: ${{ github.workspace }}
