@@ -91,3 +91,12 @@ jobs:
         run: |
           from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction
           ValidateCommitSimulatorGitHubAction().run()
+
+       - name: Save test results
+         uses: actions/upload-artifact@v2
+         if: true
+         working-directory: ${{ github.workspace }}
+         with:
+          name: Validation test results
+          path: .biosimulators-test-suite-results.json
+          if-no-files-found: warn
