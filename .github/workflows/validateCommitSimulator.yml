@@ -71,7 +71,8 @@ jobs:
             --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} \
             --password ${{ secrets.DOCKER_REGISTRY_TOKEN }}
 
-      - name: Validate and commit simulator
+      - id: validateCommitSimulator
+        name: Validate and commit simulator
         env:
           GH_REPO: ${{ github.repository }}
           GH_ACTION_RUN_ID: ${{ github.run_id }}
@@ -90,7 +91,13 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction
-          ValidateCommitSimulatorGitHubAction().run()
+          try:
+              ValidateCommitSimulatorGitHubAction().run()
+              print("::set-output name=passed::1")
+          except:
+              print("::set-output name=passed::0")
+              raise
+        continue-on-error: true
 
       - name: Save test results
         uses: actions/upload-artifact@v2
@@ -99,3 +106,11 @@ jobs:
           name: Validation test results
           path: ${{ github.workspace }}/.biosimulators-test-suite-results.json
           if-no-files-found: warn
+
+      - name: Set passed exit status
+        if: steps.validateCommitSimulator.outputs.passed == '1'
+        run: exit 0
+
+      - name: Set failed status
+        if: steps.validateCommitSimulator.outputs.passed != '1'
+        run: exit 1
