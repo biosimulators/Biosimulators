@@ -79,14 +79,21 @@ jobs:
           GH_ISSUE_NUMBER: ${{ github.event.issue.number }}
           GH_ISSUES_USER: ${{ secrets.GH_ISSUES_USER }}
           GH_ISSUES_ACCESS_TOKEN: ${{ secrets.GH_ISSUES_ACCESS_TOKEN }}
+
           DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
           DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+          DOCKER_REGISTRY_URL: ${{ secrets.DOCKER_REGISTRY_URL }}
           DOCKER_REGISTRY_USERNAME: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           DOCKER_REGISTRY_TOKEN: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+
           BIOSIMULATORS_API_CLIENT_ID: ${{ secrets.BIOSIMULATORS_API_CLIENT_ID }}
           BIOSIMULATORS_API_CLIENT_SECRET: ${{ secrets.BIOSIMULATORS_API_CLIENT_SECRET }}
           # BIOSIMULATORS_API_ENDPOINT: https://api.biosimulators.dev/ # uncomment to use the dev deployment of the BioSimulators API
-          BIOSIMULATORS_AUDIENCE: api.biosimulators.org
+
+          RUNBIOSIMULATIONS_API_CLIENT_ID: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_ID }}
+          RUNBIOSIMULATIONS_API_CLIENT_SECRET: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_SECRET }}
+          # RUNBIOSIMULATIONS_API_ENDPOINT: https://run.api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
         shell: python
         working-directory: ${{ github.workspace }}
         run: |
