@@ -102,7 +102,7 @@ jobs:
 
       - name: Save test results
         uses: actions/upload-artifact@v2
-        if: succeeded() || failed()
+        if: success() || failure()
         with:
           name: Validation test results
           path: ${{ github.workspace }}/.biosimulators-test-suite-results.json
