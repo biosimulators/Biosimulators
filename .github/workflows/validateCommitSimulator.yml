@@ -98,26 +98,12 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction
-          try:
-              ValidateCommitSimulatorGitHubAction().run()
-              print("::set-output name=passed::1")
-          except:
-              print("::set-output name=passed::0")
-              raise
-        continue-on-error: true
+          ValidateCommitSimulatorGitHubAction().run()
 
       - name: Save test results
         uses: actions/upload-artifact@v2
-        if: true
+        if: succeeded() || failed()
         with:
           name: Validation test results
           path: ${{ github.workspace }}/.biosimulators-test-suite-results.json
           if-no-files-found: warn
-
-      - name: Set passed exit status
-        if: steps.validateCommitSimulator.outputs.passed == '1'
-        run: exit 0
-
-      - name: Set failed status
-        if: steps.validateCommitSimulator.outputs.passed != '1'
-        run: exit 1
