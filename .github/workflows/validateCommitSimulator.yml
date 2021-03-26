@@ -39,10 +39,11 @@ jobs:
 
       - name: Install pip and setuptools
         run: |
-          python --version
-          sudo python --version
-          sudo python -m pip install --upgrade pip
-          sudo python -m pip install --upgrade setuptools
+          py_path=$(which python)
+          $py_path --version
+          sudo $py_path --version
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade setuptools
 
       - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
         uses: eWaterCycle/setup-singularity@v5
@@ -59,7 +60,7 @@ jobs:
       - name: Install simulator validation utilities
         working-directory: ${{ github.workspace }}
         run: |
-          sudo python -m pip install -e .[all]
+          python -m pip install -e .[all]
 
       - name: Login into Docker registries
         run: |
@@ -98,7 +99,8 @@ jobs:
           # RUNBIOSIMULATIONS_API_ENDPOINT: https://run.api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
         working-directory: ${{ github.workspace }}
         run: |
-          sudo python -c "
+          py_path=$(which python)
+          sudo $py_path -c "
           from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction
           ValidateCommitSimulatorGitHubAction().run()
           "
