@@ -55,7 +55,10 @@ Once you submit this issue, BioSimulators will use the following workflow to val
 2. An automated action will review your submission:
    1. Retrieve the specifications of your simulator.
    2. Validate these specifications.
-   3. Optionally, validate the containerized simulator specified in your specifications.
+   3. Check if you have permissions to submit this simulator.
+      - If no simulator has been submitted with this id, a GitHub team will be created to manage permissions to edited the specifications of your simulator and you will be added as a maintainer of this team. This will enable you to add collaborators to this team at https://github.com/orgs/biosimulators/teams/simulator-developers/teams.
+      - If your simulator is already in the BioSimulators registry, the action will check that you are member of the team which owns that simulator. If you are not a member, you will not be allowed to edit the specifications of the simulator. In that case, you will need to request membership to the team for your simulator.
+   4. Optionally, validate the containerized simulator specified in your specifications.
 3. If the validation fails, any errors will be posted to this issue. After fixing these issues, please edit the first block of this issue to re-initiate the automated validation.
 4. If the validation succeeds, the `Validated` label will be added to the issue.
 5. The submission of the first version of your simulator will be reviewed by the BioSimulators Team.
