@@ -94,13 +94,11 @@ jobs:
           RUNBIOSIMULATIONS_API_CLIENT_ID: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_ID }}
           RUNBIOSIMULATIONS_API_CLIENT_SECRET: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_SECRET }}
           # RUNBIOSIMULATIONS_API_ENDPOINT: https://run.api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
+        shell: python
         working-directory: ${{ github.workspace }}
         run: |
-          python=$(which python)
-          sudo --preserve-env $python -c "
-          from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction;
-          ValidateCommitSimulatorGitHubAction().run();
-          "
+          from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction
+          ValidateCommitSimulatorGitHubAction().run()
 
       - name: Save test results
         uses: actions/upload-artifact@v2
