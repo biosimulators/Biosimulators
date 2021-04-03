@@ -96,7 +96,8 @@ jobs:
           # RUNBIOSIMULATIONS_API_ENDPOINT: https://run.api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
         working-directory: ${{ github.workspace }}
         run: |
-          sudo --preserve-env python -c "
+          python=$(which python)
+          sudo --preserve-env $python -c "
           from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction;
           ValidateCommitSimulatorGitHubAction().run();
           "
