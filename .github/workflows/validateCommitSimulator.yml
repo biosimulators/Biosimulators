@@ -47,7 +47,7 @@ jobs:
         with:
           singularity-version: 3.6.4
 
-      - name: Checkout BioSimulators utils
+      - name: Checkout BioSimulators test suite
         uses: actions/checkout@v2
         with:
           repository: biosimulators/biosimulators_test_suite
