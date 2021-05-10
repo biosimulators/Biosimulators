@@ -42,6 +42,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install --upgrade setuptools
 
+      - name: Install Java # for pyNeuroML
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '15'
+
       - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
         uses: eWaterCycle/setup-singularity@v5
         with:
