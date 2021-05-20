@@ -21,10 +21,10 @@ Instructions for containerizing simulation tools and examples are available at h
 - [ ] The `ENTRYPOINT` of the container is set to this command-line interface
 - [ ] The specifications of the simulator follow the [BioSimulators format](https://api.biosimulators.org)
 - [ ] Any additional ontology terms necessary to describe your simulator have been approved
-      - [ ] Modeling frameworks: [SBO](https://sourceforge.net/p/sbo/term-request/)
-      - [ ] Algorithms and their parameters: [KiSAO](https://sourceforge.net/p/kisao/feature-requests/new/)
-      - [ ] Modeling formats: [EDAM](https://github.com/edamontology/edamontology/issues/new/choose)
-      - [ ] Licenses: [SPDX](https://tools.spdx.org/app/submit_new_license/)
+     - [ ] Modeling frameworks: [SBO](https://sourceforge.net/p/sbo/term-request/)
+     - [ ] Algorithms and their parameters: [KiSAO](https://sourceforge.net/p/kisao/feature-requests/new/)
+     - [ ] Modeling formats: [EDAM](https://github.com/edamontology/edamontology/issues/new/choose)
+     - [ ] Licenses: [SPDX](https://tools.spdx.org/app/submit_new_license/)
 - [ ] Optional, the source code for the simulation tool is publicly available
 - [ ] Optional, the simulation tool is available through a software repository such as CRAN or PyPI
 - [ ] Optional, examples, tutorials, and documentation for the simulation tool are publicly available
