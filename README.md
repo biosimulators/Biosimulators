@@ -1,4 +1,4 @@
-![Logo](https://raw.githubusercontent.com/biosimulations/Biosimulations/dev/biosimulations/libs/shared/assets/src/assets/images/biosimulators-logo/logo-white.svg)
+![Logo](https://raw.githubusercontent.com/biosimulations/Biosimulations/dev/libs/shared/assets/src/assets/images/biosimulators-logo/logo-white.svg)
 
 # BioSimulators
 
