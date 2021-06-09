@@ -97,12 +97,7 @@ jobs:
         working-directory: ${{ github.workspace }}
         uses: GabrielBB/xvfb-action@v1
         with:
-          run: |
-            python -c "
-              from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction;
-              ValidateCommitSimulatorGitHubAction().run();
-              exit();
-            "
+          run: python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       - name: Save test results
         uses: actions/upload-artifact@v2
