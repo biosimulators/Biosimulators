@@ -73,6 +73,7 @@ jobs:
 
       - id: validateCommitSimulator
         name: Validate and commit simulator
+        uses: GabrielBB/xvfb-action@v1
         env:
           GH_REPO: ${{ github.repository }}
           GH_ACTION_RUN_ID: ${{ github.run_id }}
@@ -94,9 +95,8 @@ jobs:
           RUNBIOSIMULATIONS_API_CLIENT_ID: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_ID }}
           RUNBIOSIMULATIONS_API_CLIENT_SECRET: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_SECRET }}
           # RUNBIOSIMULATIONS_API_ENDPOINT: https://run.api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
-        working-directory: ${{ github.workspace }}
-        uses: GabrielBB/xvfb-action@v1
         with:
+          working-directory: ${{ github.workspace }}
           run: python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       - name: Save test results
