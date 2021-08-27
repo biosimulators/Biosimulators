@@ -31,7 +31,7 @@ jobs:
           dockerfile: Dockerfile-base
           build_extra_args: "--compress=true --label org.opencontainers.image.revision=${{github.sha}} --label org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
           registry: ghcr.io
-          image_name: biosimulators/biosimulators
+          image_name: biosimulators/biosimulators-base
           image_tag: ${{github.sha}}
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
