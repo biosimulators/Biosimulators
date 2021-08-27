@@ -19,7 +19,7 @@ jobs:
           TIMESTAMP=$(date --rfc-3339=seconds | sed 's/ /T/')
           echo "::set-output name=timestamp::$TIMESTAMP"
 
-      - id: Copy Dockerfile to Dockerfile-assets
+      - name: Copy Dockerfile to Dockerfile-assets
         run: |
           cp Dockerfile Dockerfile-assets/
           cp Dockerfile-base Dockerfile-assets/
