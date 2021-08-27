@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+
+.coverage*
+htmlcov/
+
+_pystmptmp*_parsetab.py

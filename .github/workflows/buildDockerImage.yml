@@ -1,0 +1,73 @@
+name: Build and push Docker image
+
+on:
+  push:
+
+jobs:
+  buildAndPushImage:
+    name: Build and push Docker image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.4
+
+      # Build Docker image
+      - id: get-timestamp
+        name: Get timestamp
+        run: |
+          TIMESTAMP=$(date --rfc-3339=seconds | sed 's/ /T/')
+          echo "::set-output name=timestamp::$TIMESTAMP"   
+
+      - name: Build Docker image
+        uses: whoan/docker-build-with-cache-action@v5
+        with:
+          context: Dockerfile-assets
+          dockerfile: Dockerfile-base
+          build_extra_args: "--compress=true --label org.opencontainers.image.revision=${{github.sha}} --label org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
+          registry: ghcr.io
+          image_name: biosimulators/biosimulators
+          image_tag: ${{github.sha}}
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
+
+      - name: Label Docker image
+        run: docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
+
+      - name: Build Docker image
+        uses: whoan/docker-build-with-cache-action@v5
+        with:
+          context: Dockerfile-assets
+          dockerfile: Dockerfile
+          build_extra_args: "--compress=true --label org.opencontainers.image.revision=${{github.sha}} --label org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
+          registry: ghcr.io
+          image_name: biosimulators/biosimulators
+          image_tag: ${{github.sha}}
+          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+          password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
+
+      - name: Label Docker image
+        run: docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
+
+      # Test Docker image
+      - name: Test Docker image
+        run: |
+          cwd=$(pwd)
+          docker run \
+            --rm \
+            --entrypoint bash \
+            --mount type=bind,source=${cwd},target=/app/Biosimulators \
+            ghcr.io/biosimulators/biosimulators:latest \
+            -c "
+              pipenv install --dev
+              /bin/bash /xvfb-startup.sh pipenv run python -m pytest --forked --verbose Biosimulators/tests/
+            "
+
+      # Push Docker image
+      - name: Push Docker image
+        run: |
+          docker login ghcr.io \
+            --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} \
+            --password ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+          docker push ghcr.io/biosimulators/biosimulators-base:latest
+          docker push ghcr.io/biosimulators/biosimulators:latest

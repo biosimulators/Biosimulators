@@ -1,5 +1,11 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "rebaseWhen": "auto",
+  "pip_requirements": {
+    "fileMatch": ["Dockerfile-assets/Pipfile", "Dockerfile-assets/Pipfile.lock"]
+  },
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 5
 }
