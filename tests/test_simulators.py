@@ -1,6 +1,11 @@
 from biosimulators_utils.config import get_config
+from biosimulators_utils.combine.io import CombineArchiveReader
+from biosimulators_utils.combine.utils import get_sedml_contents
 from biosimulators_utils.log.data_model import CombineArchiveLog
+from biosimulators_utils.sedml.data_model import Report, Plot2D, Plot3D
+from biosimulators_utils.sedml.io import SedmlSimulationReader
 import importlib
+import numpy
 import os
 import parameterized
 import requests
@@ -76,8 +81,52 @@ class SimulatorsHaveValidApisTestCase(unittest.TestCase):
         config.COLLECT_COMBINE_ARCHIVE_RESULTS = True
         config.COLLECT_SED_DOCUMENT_RESULTS = True
         config.DEBUG = True
+
         results, log = api.exec_sedml_docs_in_combine_archive(archive_filename, out_dir, config=config)
+
+        archive_dirname = os.path.join(self.tmp_dirname, 'archive')
+        archive = CombineArchiveReader().run(archive_filename, archive_dirname)
+        sedml_contents = get_sedml_contents(archive)
+
         self.assertIsInstance(results, dict)
+        self.assertEquals(set(results.keys()), set(sedml_content.location for sedml_content in sedml_contents))
+        for sedml_content in sedml_contents:
+            sed_doc = SedmlSimulationReader().run(os.path.join(archive_dirname, sedml_content.location))
+
+            doc_results = results[sedml_content.location]
+            self.assertIsInstance(doc_results, dict)
+            self.assertEquals(set(doc_results.keys()), set(output.id for output in sed_doc.outputs))
+
+            for output in sed_doc.outputs:
+                output_results = doc_results[output.id]
+                self.assertIsInstance(output_results, dict)
+                if isinstance(output, Report):
+                    data_set_ids = set(data_set.id for data_set in output.data_sets)
+
+                elif isinstance(output, Plot2D):
+                    data_set_ids = set()
+                    for curve in output.curves:
+                        data_set_ids.add(curve.x_data_generator.id)
+                        data_set_ids.add(curve.y_data_generator.id)
+
+                elif isinstance(output, Plot3D):
+                    data_set_ids = set()
+                    for surface in output.surfaces:
+                        data_set_ids.add(surface.x_data_generator.id)
+                        data_set_ids.add(surface.y_data_generator.id)
+                        data_set_ids.add(surface.z_data_generator.id)
+
+                else:
+                    raise NotImplementedError('Outputs of type `{}` are not supported'.format(output.__class__.__name__))
+
+                self.assertEquals(set(output_results.keys()), data_set_ids)
+
+                for data_set_id in data_set_ids:
+                    data_set_results = output_results[data_set_id]
+                    self.assertIsInstance(data_set_results, numpy.ndarray)
+                    self.assertGreater(data_set_results.size, 0)
+                    self.assertFalse(numpy.any(numpy.isnan(data_set_results)))
+
         self.assertGreater(len(results), 0)
         self.assertIsInstance(log, CombineArchiveLog)
 
