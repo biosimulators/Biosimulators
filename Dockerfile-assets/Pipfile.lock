@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fafe0666f73e1b0150887924dd4bf5b34de22c645c07910bf2d35af5c269f296"
+            "sha256": "8d3c978237173cd7ce3b7f98affdd01953c43850e55e75ed07dc0197753d6d89"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -224,11 +224,11 @@
                 "smoldyn"
             ],
             "hashes": [
-                "sha256:68a78212d199bf7a56a8ed9b4cec4de58438c015c1147243b0ca4f3b8b416d97",
-                "sha256:95a98ec14ccb9792f80e34553d0de0e43137f88330ee293464bed405c2ac3b03"
+                "sha256:2dd7d9a5fae249c67b5d4da360d2dfce761849fd98e5da8b5ced318622642f23",
+                "sha256:eef5a8c8b0e1825d5a97d9923b7166b1ff24750b4d25cb623975ab805ed4f7fb"
             ],
             "index": "pypi",
-            "version": "==0.1.114"
+            "version": "==0.1.115"
         },
         "biosimulators-xpp": {
             "hashes": [

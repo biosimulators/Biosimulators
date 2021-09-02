@@ -42,7 +42,7 @@ smoldyn = ">=2.67.dev20210901"
 biosimulators-tellurium = ">=0.1.17"
 # XPP
 biosimulators-xpp = ">=0.0.5"
-biosimulators-utils = {version = ">=0.1.114", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
+biosimulators-utils = {version = ">=0.1.115", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
 
 [dev-packages]
 pyyaml = "*"
