@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 # AMICI
-biosimulators-amici = ">=0.1.17"
+biosimulators-amici = ">=0.1.18"
 # BioNetGen
 biosimulators-bionetgen = ">=0.1.12"
 # BoolNet
