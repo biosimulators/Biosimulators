@@ -31,14 +31,17 @@ jobs:
           dockerfile: Dockerfile-base
           build_extra_args: "--compress=true --label org.opencontainers.image.revision=${{github.sha}} --label org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
           registry: ghcr.io
-          image_name: biosimulators/biosimulators-base
+          stages_image_name: biosimulators/biosimulators-base-stages
+          image_name: biosimulators/biosimulators-base-stages
           image_tag: ${{github.sha}}
-          push_image_and_stages: false
+          push_image_and_stages: true
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"          
 
       - name: Label base Docker image
-        run: docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
+        run: |
+          docker image tag ghcr.io/biosimulators/biosimulators/biosimulators-base-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
+          docker image tag ghcr.io/biosimulators/biosimulators/biosimulators-base-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
 
       - name: Build Docker image
         uses: whoan/docker-build-with-cache-action@v5
@@ -47,14 +50,17 @@ jobs:
           dockerfile: Dockerfile
           build_extra_args: "--compress=true --label org.opencontainers.image.revision=${{github.sha}} --label org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
           registry: ghcr.io
-          image_name: biosimulators/biosimulators
+          stages_image_name: biosimulators/biosimulators-stages
+          image_name: biosimulators/biosimulators-stages
           image_tag: ${{github.sha}}
-          push_image_and_stages: false
+          push_image_and_stages: true
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
 
       - name: Label Docker image
-        run: docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
+        run: |
+          docker image tag ghcr.io/biosimulators/biosimulators-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators:${{github.sha}}
+          docker image tag ghcr.io/biosimulators/biosimulators-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
 
       # Test Docker image
       - name: Test Docker image
