@@ -20,7 +20,7 @@ COPY Pipfile /app/Pipfile
 COPY Pipfile.lock /app/Pipfile.lock
 
 # install environment
-RUN pipenv install
+RUN pipenv sync
 
 # force reinstall of matplotlib due to inconsistent version
 RUN pipenv run pip uninstall -y matplotlib \

@@ -35,7 +35,7 @@ biosimulators-pyneuroml = {version = ">=0.0.10", extras = ["netpyne", "neuron"]}
 rbapy = {version = ">=1.0.2", git = "https://github.com/biosimulators/RBApy.git"}
 biosimulators-rbapy = ">=0.0.3"
 # Smoldyn
-smoldyn = ">2.67.dev20210923"
+smoldyn = ">=2.67.dev20210923"
 # tellurium
 biosimulators-tellurium = ">=0.1.21"
 # XPP

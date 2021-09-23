@@ -24,7 +24,7 @@ jobs:
           cp Dockerfile Dockerfile-assets/
           cp Dockerfile-base Dockerfile-assets/
 
-      - name: Build Docker image
+      - name: Build base Docker image
         uses: whoan/docker-build-with-cache-action@v5
         with:
           context: Dockerfile-assets
@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"          
 
-      - name: Label Docker image
+      - name: Label base Docker image
         run: docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
 
       - name: Build Docker image
