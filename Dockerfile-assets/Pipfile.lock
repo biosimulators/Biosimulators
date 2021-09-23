@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d53ffdde346dbe1f35bca235d6478381ef1962f1234ea67a024d8448ea953f9c"
+            "sha256": "1a23ad801259812807a3eaeb0a8da141f936a8dedb29b6721db1062f28cd8618"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -2100,18 +2100,13 @@
         },
         "smoldyn": {
             "hashes": [
-                "sha256:1510d721ec16f3f552ddbcab6cad0a72620bbccffb8a2b6c9d2546ee6f7b9aa9",
-                "sha256:50921a1d47061bd19d43ba2618a580d7a8d72a3a3e408fd379ab7ccb16f8c7bb",
-                "sha256:5123be49217ec5843f9d7d4f2b868c2ca729c9aa1f0948b64ce166c9055a97a8",
-                "sha256:53173c799a472c23140bc364487e40c26e21af2a1244c9a7f0e01292ce6ffe36",
-                "sha256:871329962eb6ccc515a44d532d1236afa5fb843b62e4e2202d29643389b74c65",
-                "sha256:ca22053f3856ebbb7e8a40d53aa4f71469a89fd7bc65269aea1f61cbae2e3e1d",
-                "sha256:cceb3441ebb166b56615ef7feeef32ce6b0de8c6b7fd297a732ae1e32d5a0dd7",
-                "sha256:d09f4c5aed562aa86922748ed5f1cbbe59e092d5a2cdc4849d69d84b59d8815e",
-                "sha256:ec11a326a63e8fb24e937921c65be5dbcdeca4b00dc3c9585f25c519e4a5a0dc"
+                "sha256:2caf35a2dbea002341bd1e3c1ef9b62d0042709f529862fbfaca625f3703f03a",
+                "sha256:313f8534717977a5f82d7780af953d659623dada9c0549bcc28ae623d35d87ef",
+                "sha256:400a1fbac34a9da950aa3c305ce2d258c0d020eb36f066f3882973047905c677",
+                "sha256:ae1bdb7474f4d74259a8d77927008856955e78452246a4e00c719a32dffbd2f7"
             ],
             "index": "pypi",
-            "version": "==2.67.dev20210923"
+            "version": "==2.67.dev202109232145"
         },
         "sniffio": {
             "hashes": [
@@ -2169,11 +2164,11 @@
         },
         "sympy": {
             "hashes": [
-                "sha256:a1abd5feca9f6b28011e7e7d81a4789032b717c8d36f705bf8947c4142767b5c",
-                "sha256:aee608377f4224e1c3c08de0c344a2ef915f1e5aec549930537f8bd77c6b64d1"
+                "sha256:a3de9261e97535b83bb8607b0da2c7d03126650fafea2b2789657b229c246b2e",
+                "sha256:c986df98babfb9f5ddea49ba7b69398f6d1cfada5ae0dc0431691cddaff851f6"
             ],
-            "markers": "python_version >= '3.6'",
-            "version": "==1.9rc1"
+            "index": "pypi",
+            "version": "==1.7.1"
         },
         "tabulate": {
             "hashes": [

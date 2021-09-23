@@ -12,6 +12,7 @@ biosimulators-bionetgen = ">=0.1.16"
 # BoolNet
 biosimulators-boolnet = ">=0.1.17"
 # CBMPy
+sympy = "<1.9" # avoid versions without microversion numbers because CBMPy can't handle versions with only major and minor numbers
 biosimulators-cbmpy = ">=0.1.13"
 # COBRApy
 biosimulators-cobrapy = ">=0.1.18"
@@ -26,7 +27,7 @@ biosimulators-libsbmlsim = ">=0.0.4"
 # MASSpy
 biosimulators-masspy = ">=0.0.4"
 # PySCeS
-cython = "<3" # to avoid prelease
+cython = "<3" # avoid prelease
 # assimulo = {version = ">=3.2.5", ref = "Assimulo-3.2.5", git = "https://github.com/modelon-community/Assimulo.git"}
 biosimulators-pysces = ">=0.1.23"
 # pyNeuroML
