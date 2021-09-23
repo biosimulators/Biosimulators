@@ -209,7 +209,6 @@ RUN apt-get install -y --no-install-recommends \
         git
 
 # PySCeS
-ARG PYSCES_REVISION=7478a05bc4480e580fabfe89acb259274ced7f6c
 RUN apt-get install -y --no-install-recommends \
         git \
         gcc \

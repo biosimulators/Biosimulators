@@ -33,8 +33,9 @@ jobs:
           registry: ghcr.io
           image_name: biosimulators/biosimulators-base
           image_tag: ${{github.sha}}
+          push_image_and_stages: false
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-          password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
+          password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"          
 
       - name: Label Docker image
         run: docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
@@ -48,6 +49,7 @@ jobs:
           registry: ghcr.io
           image_name: biosimulators/biosimulators
           image_tag: ${{github.sha}}
+          push_image_and_stages: false
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           password: "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
 
@@ -70,9 +72,18 @@ jobs:
 
       # Push Docker image
       - name: Push Docker image
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
+          version="${TAG/refs\/tags\//}"
+          docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${version}
+          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${version}
+
           docker login ghcr.io \
             --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} \
             --password ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+          docker push ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
+          docker push ghcr.io/biosimulators/biosimulators:${{github.sha}}
           docker push ghcr.io/biosimulators/biosimulators-base:latest
           docker push ghcr.io/biosimulators/biosimulators:latest
+          docker push ghcr.io/biosimulators/biosimulators-base:${version}
+          docker push ghcr.io/biosimulators/biosimulators:${version}
