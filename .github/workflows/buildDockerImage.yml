@@ -40,8 +40,8 @@ jobs:
 
       - name: Label base Docker image
         run: |
-          docker image tag ghcr.io/biosimulators/biosimulators/biosimulators-base-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
-          docker image tag ghcr.io/biosimulators/biosimulators/biosimulators-base-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
+          docker image tag ghcr.io/biosimulators/biosimulators-base-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
+          docker image tag ghcr.io/biosimulators/biosimulators-base-stages:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
 
       - name: Build Docker image
         uses: whoan/docker-build-with-cache-action@v5
@@ -84,7 +84,7 @@ jobs:
         run: |
           version="${TAG/refs\/tags\//}"
           docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${version}
-          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${version}
+          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:${version}
 
           docker login ghcr.io \
             --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} \
