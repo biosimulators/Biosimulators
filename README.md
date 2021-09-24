@@ -26,7 +26,7 @@ We recommend that users use the hosted versions of runBioSimulations at https://
 
 Each validated simulation tool is available as Docker image. Most of the validated simulation tools are also available as Python APIs. See https://biosimulators.org for information about the interfaces available for each tool and where they can be obtained.
 
-A Docker image with a Pipenv environment with Python APIs for most of the validated simulation tools is available at https://github.com/orgs/biosimulators/packages/container/package/biosimulators. An iPython shell for this environment can be launched by installing Docker and running the commands below. Information about using the Python APIs in the image is available at https://biosimulators.org/help.:
+A Docker image with a Python environment with APIs for most of the validated simulation tools is available at https://github.com/orgs/biosimulators/packages/container/package/biosimulators. An iPython shell for this environment can be launched by installing Docker and running the commands below. Information about using the Python APIs in the image is available at https://biosimulators.org/help.:
 ```
 docker pull ghcr.io/biosimulators/biosimulators
 docker run -it --rm ghcr.io/biosimulators/biosimulators

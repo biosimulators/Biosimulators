@@ -20,15 +20,15 @@ COPY Pipfile /app/Pipfile
 COPY Pipfile.lock /app/Pipfile.lock
 
 # install environment
-RUN pipenv sync
+RUN pipenv install --system --deploy
 
 # force reinstall of matplotlib due to inconsistent version
-RUN pipenv run pip uninstall -y matplotlib \
-    && pipenv run pip install "matplotlib==3.2.0" \
-    && pipenv run python -c "import matplotlib.font_manager"
+RUN pip uninstall -y matplotlib \
+    && pip install "matplotlib==3.2.0" \
+    && python -c "import matplotlib.font_manager"
 
 # install assimulo because pipenv fails to install it
 ARG ASSIMULO_VERSION=3.2.5
-RUN pipenv run pip install git+https://github.com/modelon-community/Assimulo.git@Assimulo-${ASSIMULO_VERSION}
+RUN pip install git+https://github.com/modelon-community/Assimulo.git@Assimulo-${ASSIMULO_VERSION}
 
-CMD /bin/bash /xvfb-startup.sh pipenv run ipython
+CMD /bin/bash /xvfb-startup.sh ipython

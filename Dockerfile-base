@@ -124,7 +124,7 @@ RUN apt-get install --no-install-recommends -y \
         swig \
         libbz2-dev \
     \
-    && PY_EXEC_PATH=$(pipenv run which python) \
+    && PY_EXEC_PATH=$(python) \
     && PY_PREFIX=$(echo ${PY_EXEC_PATH} | rev | cut -d "/" -f 3- | rev) \
     && cd /tmp \
     && wget https://github.com/libsbmlsim/libsbmlsim/archive/refs/tags/v${LSBMLSIM_VERSION}.tar.gz \
