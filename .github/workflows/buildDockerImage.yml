@@ -76,15 +76,34 @@ jobs:
               /bin/bash /xvfb-startup.sh pipenv run python -m pytest --forked --verbose Biosimulators/tests/
             "
 
-      # Push Docker image
-      - name: Push Docker image
+      # Get version number
+      - id: get-version-number
+        name: Get version number
         if: startsWith(github.ref, 'refs/tags/')
         env:
           TAG: ${{ github.ref }}
         run: |
           version="${TAG/refs\/tags\//}"
-          docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${version}
-          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:${version}
+          echo "::set-output name=version::$version"
+
+      # Create GitHub release
+      - name: Create GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.get-version-number.outputs.version }}
+          release_name: Release ${{ steps.get-version-number.outputs.version }}
+
+      # Push Docker image
+      - name: Push Docker image
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          VERSION: ${{ steps.get-version-number.outputs.version }}
+        run: |
+          docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${VERSION}
+          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:${VERSION}
 
           docker login ghcr.io \
             --username ${{ secrets.DOCKER_REGISTRY_USERNAME }} \
@@ -93,5 +112,5 @@ jobs:
           docker push ghcr.io/biosimulators/biosimulators:${{github.sha}}
           docker push ghcr.io/biosimulators/biosimulators-base:latest
           docker push ghcr.io/biosimulators/biosimulators:latest
-          docker push ghcr.io/biosimulators/biosimulators-base:${version}
-          docker push ghcr.io/biosimulators/biosimulators:${version}
+          docker push ghcr.io/biosimulators/biosimulators-base:${VERSION}
+          docker push ghcr.io/biosimulators/biosimulators:${VERSION}
