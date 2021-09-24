@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-ipython
+ipython = "*"
 biosimulators-utils = {version = ">=0.1.125", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
 # AMICI
 biosimulators-amici = ">=0.1.19"
