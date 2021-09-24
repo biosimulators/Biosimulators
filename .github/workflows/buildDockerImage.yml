@@ -72,8 +72,8 @@ jobs:
             --mount type=bind,source=${cwd},target=/app/Biosimulators \
             ghcr.io/biosimulators/biosimulators:latest \
             -c "
-              pipenv install --dev
-              /bin/bash /xvfb-startup.sh pipenv run python -m pytest --forked --verbose Biosimulators/tests/
+              pipenv install --dev --system --deploy
+              /bin/bash /xvfb-startup.sh python -m pytest --forked --verbose Biosimulators/tests/
             "
 
       # Get version number
