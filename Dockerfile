@@ -30,3 +30,5 @@ RUN pipenv run pip uninstall -y matplotlib \
 # install assimulo because pipenv fails to install it
 ARG ASSIMULO_VERSION=3.2.5
 RUN pipenv run pip install git+https://github.com/modelon-community/Assimulo.git@Assimulo-${ASSIMULO_VERSION}
+
+CMD /bin/bash /xvfb-startup.sh pipenv run ipython
