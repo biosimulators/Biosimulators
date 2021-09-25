@@ -16,7 +16,7 @@ This repository serves several function:
 - This repository contains code for automated verification of the capabilities of containerized simulation tools.
 - This repository contains a Pipenv configuration and a Dockerfile for a Docker image with a Python environment with most of the validated simulation tools and tests for this Docker image
 
-The code for the BioSimulators web application, REST API, and database is in the [Biosimulations repository](https://github.com/biosimulations/Biosimulations). The code for verifying the capabilities and accuracy of containerized simulation tools is in the [BioSimulators test suite repository](https://github.com/biosimulators/Biosimulators_test_suite).
+The code for the BioSimulators web application, REST API, and database is in the [Biosimulations repository](https://github.com/biosimulations/Biosimulations). The code for verifying the capabilities and accuracy of containerized simulation tools is in the [BioSimulators test suite repository](https://github.com/biosimulators/Biosimulators_test_suite). The code for the individual simulation tools is spread across numerous repositories, including several owned by the [BioSimulators GitHub organization](https://github.com/biosimulators/).
 
 ## Getting started
 
@@ -31,6 +31,8 @@ A Docker image with a Python environment with APIs for most of the validated sim
 docker pull ghcr.io/biosimulators/biosimulators
 docker run -it --rm ghcr.io/biosimulators/biosimulators
 ```
+
+Interactive tutorials for the Python APIs for simulation tools and for BioSimulators' API are available from Binder [here](https://mybinder.org/v2/gh/biosimulators/Biosimulators_tutorials/HEAD).
 
 ### Simulation software developers
 
