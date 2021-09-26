@@ -5,11 +5,11 @@ name = "pypi"
 
 [packages]
 ipython = "*"
-biosimulators-utils = {version = ">=0.1.125", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
+biosimulators-utils = {version = ">=0.1.126", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
 # AMICI
 biosimulators-amici = ">=0.1.19"
 # BioNetGen
-biosimulators-bionetgen = ">=0.1.16"
+biosimulators-bionetgen = ">=0.1.17"
 # BoolNet
 biosimulators-boolnet = ">=0.1.17"
 # CBMPy
