@@ -123,7 +123,7 @@ jobs:
 
           RUNBIOSIMULATIONS_API_CLIENT_ID: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_ID }}
           RUNBIOSIMULATIONS_API_CLIENT_SECRET: ${{ secrets.RUNBIOSIMULATIONS_API_CLIENT_SECRET }}
-          # RUNBIOSIMULATIONS_API_ENDPOINT: https://run.api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
+          # RUNBIOSIMULATIONS_API_ENDPOINT: https://api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
         with:
           working-directory: ${{ github.workspace }}
           run: python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
