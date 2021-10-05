@@ -44,6 +44,14 @@ Information about how to containerize a simulation tool and information about ho
 
 We welcome contributions to BioSimulators! Please see the [Guide to Contributing](CONTRIBUTING.md) for information about how to get started.
 
+## Technical documentation
+
+Please see the links below for additional technical documentation.
+
+* Simulation tools, format converters, SED-ML/COMBINE validator, simulator test suite, and Python utilities: https://docs.biosimulators.org
+* REST API: https://api.biosimulators.org
+* Web site and database: https://docs.biosimulations.org
+
 ## License
 
 This package is released under the [MIT license](LICENSE).
