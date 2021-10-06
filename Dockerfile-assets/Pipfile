@@ -49,6 +49,7 @@ requests = "*"
 parameterized = "*"
 pytest = "*"
 pytest-forked = "*"
+pytest-timeout = "*"
 
 [requires]
 python_version = "3.9"

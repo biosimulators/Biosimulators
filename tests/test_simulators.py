@@ -8,6 +8,7 @@ import importlib
 import numpy
 import os
 import parameterized
+import pytest
 import requests
 import yaml
 import shutil
@@ -32,6 +33,7 @@ class SimulatorsHaveValidApisTestCase(unittest.TestCase):
         (simulator['id'], simulator)
         for simulator in SIMULATORS
     )
+    @pytest.mark.timeout(5 * 60)    
     def test(self, id, simulator):
         simulator_module = simulator['api']['module']
         example_combine_archive = simulator['exampleCombineArchive']
