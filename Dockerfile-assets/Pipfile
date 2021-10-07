@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 ipython = "*"
-biosimulators-utils = {version = ">=0.1.128", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
+biosimulators-utils = {version = ">=0.1.130", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
 # AMICI
 biosimulators-amici = ">=0.1.19"
 # BioNetGen
