@@ -52,6 +52,27 @@ Please see the links below for additional technical documentation.
 * REST API: https://api.biosimulators.org
 * Web site and database: https://docs.biosimulations.org
 
+## Known issues
+
+### Installation of individual simulation tools
+
+* Several simulation tools are not available from PyPI
+    * There is an open issue to publish **LibSBMLSim** to PyPI.
+    * The version of **RBApy** used by BioSimulators is a fork. This fork adds the ability to run simulation with GLPK and Gurobi, in addition to CPLEX. There is an open pull request to merge this fork. There is also an open issue to publish RBA to PyPI.
+    * **BioNetGen**, **VCell** and **XPP** cannot be installed from PyPI because they are not Python packages.
+    * Most simulation tools require dependencies which must be installed separately from pip. See each tool for its installation instructions.
+
+### BioSimulators consolidated Docker image
+
+* **OpenCOR** is not currently installed because OpenCOR is distributed as its own Python environment. A a result, OpenCOR is difficult to install into other environments, such as the consolidated BioSimulators environment. In addition, OpenCOR is also currently pinned to Python 3.7.
+* **VCell** is not currently installed because limited installation instructions are available. VCell also does not provide a compatible Python API.
+
+
+## Utilizing multiple simulation tools within a single Python environment
+
+* **PySCeS** and **NEURON/NetPyNe** cannot be imported into the same Python memory. This appears to be due to using different versions of SUNDIALS. Importing both causes segmentation faults. One workaround is to import the tools in separate forks that have separate memories.
+* When installing **tellurium** or **MASSpy**, as well additional tools, it may be necessary to reinstall **numpy** (1.19.3) and **matplotlib** (3.2) after all tools have been installed. Those two particular microversions of numpy and matplotlib are necessary because the latest versions of tellurium (2.2.0) and MASSpy (0.1.2) require those specific microversions. This reinstallation is necessary when pip first installs more recent versions of numpy and matplotlib, compiles packages for those versions of numpy and matplotlib, and then replaces numpy or matplotlib with the older versions of numpy and matplotlib required by tellurium and MASSpy when tellurium and MASSpy are installed to satisfy their requirements of numpy and matplotlib. This problem stems from the limited control over environments provided by pip.
+
 ## License
 
 This package is released under the [MIT license](LICENSE).
