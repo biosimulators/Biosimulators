@@ -48,7 +48,7 @@ jobs:
       - name: Clean up unnecessary images to free disk space
         run: |
           images=$(docker images | grep -v ${{github.sha}} | grep ago  | awk '{print $3}')
-          docker rm -f $images
+          docker rmi -f $images
 
       - name: Label base Docker image
         run: |
@@ -72,7 +72,7 @@ jobs:
       - name: Clean up unnecessary images to free disk space
         run: |
           images=$(docker images | grep -v ${{github.sha}} | grep ago  | awk '{print $3}')
-          docker rm -f $images
+          docker rmi -f $images
 
       - name: Label Docker image
         run: |
