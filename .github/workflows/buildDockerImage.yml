@@ -10,14 +10,18 @@ jobs:
 
     steps:
       # Free disk space
+      # Inspiration
+      # - https://github.com/easimon/maximize-build-space/blob/master/action.yml
+      # - https://githubmemory.com/repo/ros-industrial/industrial_ci/issues/648
+      # - https://github.community/t/bigger-github-hosted-runners-disk-space/17267/11
       - name: Maximize build space
-        uses: easimon/maximize-build-space@master
-        with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
+        run: |
+          sudo apt-get -qq purge build-essential ghc*
+          sudo apt-get clean
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          docker system prune -af
 
       # checkout repository
       - name: Checkout repository
