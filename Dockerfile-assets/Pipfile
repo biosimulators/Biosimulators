@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 ipython = "*"
-biosimulators-utils = {version = ">=0.1.131", extras = ["bngl", "cellml", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
+biosimulators-utils = {version = ">=0.1.133", extras = ["bngl", "cellml", "escher", "lems", "logging", "neuroml", "sbml", "smoldyn"]}
 # AMICI
 biosimulators-amici = ">=0.1.19"
 # BioNetGen
@@ -39,7 +39,7 @@ biosimulators-rbapy = ">=0.0.3"
 # Smoldyn
 smoldyn = ">=2.67.dev202109232145"
 # tellurium
-biosimulators-tellurium = ">=0.1.21"
+biosimulators-tellurium = ">=0.1.23"
 # XPP
 biosimulators-xpp = ">=0.0.8"
 
