@@ -1,4 +1,5 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/biosimulators/Biosimulators_tutorials/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://tutorial.biosimulators.org/)
+[![All Contributors](https://img.shields.io/github/all-contributors/biosimulators/Biosimulators/HEAD)](#contributors-
 
 ![Logo](https://raw.githubusercontent.com/biosimulations/Biosimulations/dev/libs/shared/assets/src/assets/images/biosimulators-logo/logo-white.svg)
 
@@ -34,7 +35,7 @@ docker pull ghcr.io/biosimulators/biosimulators
 docker run -it --rm ghcr.io/biosimulators/biosimulators
 ```
 
-Interactive tutorials for the Python APIs for simulation tools and for BioSimulators' API are available from Binder [here](https://mybinder.org/v2/gh/biosimulators/Biosimulators_tutorials/HEAD).
+Interactive tutorials for the Python APIs for simulation tools and for BioSimulators' API are available from Binder [here](https://tutorial.biosimulators.org/).
 
 ### Simulation software developers
 
@@ -79,7 +80,7 @@ This package is released under the [MIT license](LICENSE).
 
 ## Development team
 
-This package was developed by the [Karr Lab](https://www.karrlab.org) at the Icahn School of Medicine at Mount Sinai in New York and the [Center for Cell Analysis and Modeling](https://health.uconn.edu/cell-analysis-modeling/) at UConn Health as part of the [Center for Reproducible Biomodeling Modeling](https://reproduciblebiomodels.org).
+This package was developed by the [Karr Lab](https://www.karrlab.org) at the Icahn School of Medicine at Mount Sinai in New York and the [Center for Cell Analysis and Modeling](https://health.uconn.edu/cell-analysis-modeling/) at UConn Health as part of the [Center for Reproducible Biomodeling Modeling](https://reproduciblebiomodels.org) with assistance from the contributors listed [here](CONTRIBUTORS.md).
 
 - [Bilal Shaikh](https://www.bshaikh.com)
 - [Jonathan Karr](https://www.karrlab.org)
