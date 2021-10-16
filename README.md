@@ -1,7 +1,5 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://tutorial.biosimulators.org/)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![All Contributors](https://img.shields.io/github/all-contributors/biosimulators/Biosimulators/HEAD)](#contributors-)
 
 ![Logo](https://raw.githubusercontent.com/biosimulations/Biosimulations/dev/libs/shared/assets/src/assets/images/biosimulators-logo/logo-white.svg)
 
@@ -95,24 +93,3 @@ This package was developed with support from the National Institute for Bioimagi
 ## Questions and comments
 
 Please contact us at [info@biosimulators.org](mailto:info@biosimulators.org) with any questions or comments.
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/moraru"><img src="https://avatars.githubusercontent.com/u/7397814?v=4?s=100" width="100px;" alt=""/><br /><sub><b>moraru</b></sub></a><br /><a href="#tool-moraru" title="Tools">🔧</a> <a href="#ideas-moraru" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/danv61"><img src="https://avatars.githubusercontent.com/u/29076329?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Vasilescu</b></sub></a><br /><a href="#tool-danv61" title="Tools">🔧</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

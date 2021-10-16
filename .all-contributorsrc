@@ -1,10 +1,28 @@
 {
   "files": [
-    "README.md"
+    "CONTRIBUTORS.md"
   ],
   "imageSize": 100,
   "commit": false,
   "contributors": [
+    {
+      "login": "jonrkarr",
+      "name": "Jonathan Karr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2848297?v=4",
+      "profile": "https://www.karrlab.org",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bilalshaikh42",
+      "name": "Bilal Shaikh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32490144?v=4",
+      "profile": "http://bshaikh.com",
+      "contributions": [
+        "bug"
+      ]
+    },
     {
       "login": "moraru",
       "name": "moraru",
