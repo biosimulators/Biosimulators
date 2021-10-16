@@ -11,6 +11,7 @@ BioSimulators was developed with help from the following people:
     <td align="center"><a href="http://bshaikh.com"><img src="https://avatars.githubusercontent.com/u/32490144?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bilal Shaikh</b></sub></a><br /><a href="https://github.com/biosimulators/Biosimulators/issues?q=author%3Abilalshaikh42" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/moraru"><img src="https://avatars.githubusercontent.com/u/7397814?v=4?s=100" width="100px;" alt=""/><br /><sub><b>moraru</b></sub></a><br /><a href="#tool-moraru" title="Tools">🔧</a> <a href="#ideas-moraru" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/danv61"><img src="https://avatars.githubusercontent.com/u/29076329?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Vasilescu</b></sub></a><br /><a href="#tool-danv61" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://github.com/abulovic"><img src="https://avatars.githubusercontent.com/u/1510530?v=4?s=100" width="100px;" alt=""/><br /><sub><b>abulovic</b></sub></a><br /><a href="#tool-abulovic" title="Tools">🔧</a></td>
     <td align="center"><a href="https://github.com/0u812"><img src="https://avatars.githubusercontent.com/u/7402146?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kyle Medley</b></sub></a><br /><a href="#tool-0u812" title="Tools">🔧</a> <a href="#ideas-0u812" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
