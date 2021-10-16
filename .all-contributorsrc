@@ -31,13 +31,22 @@
       "contributions": [
         "tool",
         "ideas"
-        ]
+      ]
     },
     {
       "login": "danv61",
       "name": "Dan Vasilescu",
       "avatar_url": "https://avatars.githubusercontent.com/u/29076329?v=4",
       "profile": "https://github.com/danv61",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "aurelien-naldi",
+      "name": "Aurélien Naldi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/250984?v=4",
+      "profile": "http://aurelien.naldi.info/",
       "contributions": [
         "tool"
       ]
