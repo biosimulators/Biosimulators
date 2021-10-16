@@ -31,7 +31,7 @@
       "contributions": [
         "tool",
         "ideas"
-        ]
+      ]
     },
     {
       "login": "danv61",
@@ -40,6 +40,16 @@
       "profile": "https://github.com/danv61",
       "contributions": [
         "tool"
+      ]
+    },
+    {
+      "login": "agarny",
+      "name": "Alan Garny",
+      "avatar_url": "https://avatars.githubusercontent.com/u/602265?v=4",
+      "profile": "https://hellix.com/Alan/",
+      "contributions": [
+        "tool",
+        "ideas"
       ]
     }
   ],
