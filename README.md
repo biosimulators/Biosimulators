@@ -106,6 +106,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/moraru"><img src="https://avatars.githubusercontent.com/u/7397814?v=4?s=100" width="100px;" alt=""/><br /><sub><b>moraru</b></sub></a><br /><a href="#tool-moraru" title="Tools">🔧</a> <a href="#ideas-moraru" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/danv61"><img src="https://avatars.githubusercontent.com/u/29076329?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Vasilescu</b></sub></a><br /><a href="#tool-danv61" title="Tools">🔧</a></td>
   </tr>
 </table>
 
