@@ -31,13 +31,22 @@
       "contributions": [
         "tool",
         "ideas"
-        ]
+      ]
     },
     {
       "login": "danv61",
       "name": "Dan Vasilescu",
       "avatar_url": "https://avatars.githubusercontent.com/u/29076329?v=4",
       "profile": "https://github.com/danv61",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "bgoli",
+      "name": "Brett Olivier",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5011985?v=4",
+      "profile": "http://teusinkbruggemanlab.nl/brett-olivier/",
       "contributions": [
         "tool"
       ]
