@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "danv61",
+      "name": "Dan Vasilescu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29076329?v=4",
+      "profile": "https://github.com/danv61",
+      "contributions": [
+        "tool"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Biosimulators",
+  "projectOwner": "biosimulators",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
