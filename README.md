@@ -1,5 +1,4 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://tutorial.biosimulators.org/)
-[![All Contributors](https://img.shields.io/github/all-contributors/biosimulators/Biosimulators/HEAD)](#contributors-)
 
 ![Logo](https://raw.githubusercontent.com/biosimulations/Biosimulations/dev/libs/shared/assets/src/assets/images/biosimulators-logo/logo-white.svg)
 
