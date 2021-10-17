@@ -57,7 +57,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/40125033?v=4",
       "profile": "https://claudine-chaouiya.pedaweb.univ-amu.fr/index.html",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -204,7 +205,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/8277248?v=4",
       "profile": "http://bionetgen.org/",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -286,7 +288,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1556687?v=4",
       "profile": "http://www.opensourcebrain.org/",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -331,7 +334,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/33039297?v=4",
       "profile": "http://www.smoldyn.org/",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -440,7 +444,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1510530?v=4",
       "profile": "https://github.com/abulovic",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -449,7 +454,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/602265?v=4",
       "profile": "https://hellix.com/Alan/",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -468,7 +474,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32333634?v=4",
       "profile": "https://github.com/AnneGoelzer",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -477,7 +484,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/11724447?v=4",
       "profile": "https://github.com/ASinanSaglam",
       "contributions": [
-        "tool"
+        "tool",
+        "data"
       ]
     },
     {
@@ -516,6 +524,69 @@
       "contributions": [
         "ideas",
         "tool"
+      ]
+    },
+    {
+      "login": "SBRG",
+      "name": "Systems Biology Research Group",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4237829?v=4",
+      "profile": "http://systemsbiology.ucsd.edu/",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "ModelDBRepository",
+      "name": "ModelDB",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38667483?v=4",
+      "profile": "http://modeldb.yale.edu/",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "joncison",
+      "name": "Jon Ison",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1506863?v=4",
+      "profile": "https://github.com/joncison",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "annazhukova",
+      "name": "Anna Zhukova",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10465838?v=4",
+      "profile": "https://research.pasteur.fr/en/member/anna-zhukova",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "matuskalas",
+      "name": "Matúš Kalaš",
+      "avatar_url": "https://avatars.githubusercontent.com/u/992660?v=4",
+      "profile": "https://orcid.org/0000-0002-1509-4981",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "micheldumontier",
+      "name": "Michel Dumontier",
+      "avatar_url": "https://avatars.githubusercontent.com/u/993852?v=4",
+      "profile": "http://dumontierlab.com/",
+      "contributions": [
+        "data"
+      ]
+    },
+    {
+      "login": "mbdebian",
+      "name": "Manuel Bernal Llinares",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8855107?v=4",
+      "profile": "https://uk.linkedin.com/in/manuelbernal",
+      "contributions": [
+        "data"
       ]
     }
   ],
