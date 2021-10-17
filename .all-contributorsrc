@@ -451,8 +451,8 @@
       "contributions": [
         "tool"
       ]
-     },
-     {
+    },
+    {
       "login": "0u812",
       "name": "Kyle Medley",
       "avatar_url": "https://avatars.githubusercontent.com/u/7402146?v=4",
@@ -495,6 +495,26 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/5011985?v=4",
       "profile": "http://teusinkbruggemanlab.nl/brett-olivier/",
       "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "jhgennari",
+      "name": "John Gennari",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2684850?v=4",
+      "profile": "https://github.com/jhgennari",
+      "contributions": [
+        "ideas",
+        "tool"
+      ]
+    },
+    {
+      "login": "nickerso",
+      "name": "David Nickerson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/811244?v=4",
+      "profile": "http://about.me/david.nickerson",
+      "contributions": [
+        "ideas",
         "tool"
       ]
     }
