@@ -5,15 +5,6 @@ labels:
   - "Validate/submit simulator"
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ### Instructions
-
-        Please use this form to validate or contribute a simulation tool, another version of the tool, or update a version of the tool.
-
-        Instructions for creating simulation tools and examples are available at https://biosimulators.org/help.
-
   - type: textarea
     id: tool
     attributes:
@@ -35,7 +26,10 @@ body:
     id: compliance
     attributes:
       label: Support for BioSimulators' conventions
-      description: Please use this checklist to confirm your simulation tool is ready for submission to BioSimulators
+      description: |
+        Please use this checklist to confirm your simulation tool is ready for submission to BioSimulators.
+
+        Instructions for creating simulation tools and examples are available at https://biosimulators.org/help.
       options:
         - label: The simulation tool is provided as a Docker image
           required: true
