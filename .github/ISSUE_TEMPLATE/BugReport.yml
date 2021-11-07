@@ -7,8 +7,8 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: What is the bug?
-      description: Please provide a clear and concise description of the bug
+      label: "What is the bug?"
+      description: "Please provide a clear and concise description of the bug"
     validations:
       required: true
 
