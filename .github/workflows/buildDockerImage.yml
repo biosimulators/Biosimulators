@@ -2,6 +2,10 @@ name: Build and push Docker image
 
 on:
   push:
+    paths:
+      - 'Dockerfile'
+      - 'Dockerfile-base'
+      - 'Dockerfile-assets/**'
 
 jobs:
   buildAndPushImage:
