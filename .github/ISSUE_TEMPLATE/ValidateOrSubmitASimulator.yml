@@ -36,39 +36,39 @@ body:
     attributes:
       label: Support for BioSimulators' conventions
       description: Please use this checklist to confirm your simulation tool is ready for submission to BioSimulators
-        options:
-          - label: The simulation tool is provided as a Docker image
-            required: true
-          - label: The `ENTRYPOINT` of the image is a [BioSimulators-compliant command-line interface](https://biosimulators.org/help) 
-            required: true
-          - label: This command-line interface supports the [COMBINE/OMEX archive](https://combinearchive.org/) format
-            required: true
-          - label: This command-line interface supports the [Simulation Experiment Description Markup Language (SED-ML)](https://combinearchive.org/) format
-            required: true
-          - label: This command-line interface supports the [Hierarchical Data Format (HDF5)](https://www.hdfgroup.org/solutions/hdf5/)
-            required: true
-          - label: The capabilities of the tool are described using [BioSimulators' format](https://biosimulators.org/conventions/simulator-specs)
-            required: true
-          - label: The modeling frameworks supported by the tool are described using [Systems Biology Ontology (SBO)](https://github.com/EBI-BioModels/SBO/issues) terms
-            required: true
-          - label: The simulation algorithms supported by the tool are described using [Kinetic Simulation Algorithm Ontology (KiSAO)](https://github.com/SED-ML/KiSAO/issues/new/choose) ontology terms
-            required: true
-          - label: The model formats supported by the tool are described using [EMBRACE Data and Methods (EDAM)](https://github.com/edamontology/edamontology/issues/new/choose) ontology terms
-            required: true
-          - label: The licenses supported by the tool are described using [Software Package Data Exchange (SPDX)](https://tools.spdx.org/app/submit_new_license/) identifiers
-            required: true
-          - label: The source code for the simulation tool is publicly available
-            required: false
-          - label: The simulation tool is available through a software repository such as CRAN or PyPI
-            required: false
-          - label: The simulation tool is registered with [bio.tools](https://bio.tools/)
-            required: false
-          - label: The Docker image provides [Open Containers Initiative-compliant metadata](https://biosimulators.org/help)
-            required: false
-          - label: The Docker image provides [BioContainers-compliant metadata](https://biosimulators.org/help)
-            required: false
-          - label: The Docker image is registered with [BioContainers](https://biocontainers.pro/)
-            required: false
+      options:
+        - label: The simulation tool is provided as a Docker image
+          required: true
+        - label: The `ENTRYPOINT` of the image is a [BioSimulators-compliant command-line interface](https://biosimulators.org/help) 
+          required: true
+        - label: This command-line interface supports the [COMBINE/OMEX archive](https://combinearchive.org/) format
+          required: true
+        - label: This command-line interface supports the [Simulation Experiment Description Markup Language (SED-ML)](https://combinearchive.org/) format
+          required: true
+        - label: This command-line interface supports the [Hierarchical Data Format (HDF5)](https://www.hdfgroup.org/solutions/hdf5/)
+          required: true
+        - label: The capabilities of the tool are described using [BioSimulators' format](https://biosimulators.org/conventions/simulator-specs)
+          required: true
+        - label: The modeling frameworks supported by the tool are described using [Systems Biology Ontology (SBO)](https://github.com/EBI-BioModels/SBO/issues) terms
+          required: true
+        - label: The simulation algorithms supported by the tool are described using [Kinetic Simulation Algorithm Ontology (KiSAO)](https://github.com/SED-ML/KiSAO/issues/new/choose) ontology terms
+          required: true
+        - label: The model formats supported by the tool are described using [EMBRACE Data and Methods (EDAM)](https://github.com/edamontology/edamontology/issues/new/choose) ontology terms
+          required: true
+        - label: The licenses supported by the tool are described using [Software Package Data Exchange (SPDX)](https://tools.spdx.org/app/submit_new_license/) identifiers
+          required: true
+        - label: The source code for the simulation tool is publicly available
+          required: false
+        - label: The simulation tool is available through a software repository such as CRAN or PyPI
+          required: false
+        - label: The simulation tool is registered with [bio.tools](https://bio.tools/)
+          required: false
+        - label: The Docker image provides [Open Containers Initiative-compliant metadata](https://biosimulators.org/help)
+          required: false
+        - label: The Docker image provides [BioContainers-compliant metadata](https://biosimulators.org/help)
+          required: false
+        - label: The Docker image is registered with [BioContainers](https://biocontainers.pro/)
+          required: false
 
   - type: markdown
     attributes:
