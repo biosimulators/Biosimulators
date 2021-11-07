@@ -1,8 +1,7 @@
 name: Bug report
 description: Report a bug to help us improve
 title: "🐛: "
-labels: 
-  - "bug"
+labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
