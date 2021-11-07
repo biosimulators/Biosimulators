@@ -1,6 +1,6 @@
 name: Start a discussion
 description: Initiate a discussion among the community
-title: ''
+title: ""
 labels:
   - discussion
 assignees: []
