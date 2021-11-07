@@ -51,7 +51,7 @@ body:
           required: true
         - label: The modeling frameworks supported by the tool are described using [Systems Biology Ontology (SBO)](https://github.com/EBI-BioModels/SBO/issues) terms
           required: true
-        - label: The simulation algorithms supported by the tool are described using [Kinetic Simulation Algorithm Ontology (KiSAO)](https://github.com/SED-ML/KiSAO/issues/new/choose) ontology terms
+        - label: The algorithms supported by the tool are described using [Kinetic Simulation Algorithm Ontology (KiSAO)](https://github.com/SED-ML/KiSAO/issues/new/choose) ontology terms
           required: true
         - label: The model formats supported by the tool are described using [EMBRACE Data and Methods (EDAM)](https://github.com/edamontology/edamontology/issues/new/choose) ontology terms
           required: true
