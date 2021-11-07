@@ -1,8 +1,9 @@
 name: Bug report
 description: Report a bug to help us improve
 title: ''
-labels: bug
-assignees: ''
+labels: 
+  - bug
+assignees: []
 body:
   - type: textarea
     id: description

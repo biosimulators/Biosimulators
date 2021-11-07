@@ -1,11 +1,11 @@
 blank_issues_enabled: true
 contact_links:
   - name: Request an SBO term for a modeling framework
-    url: https://sourceforge.net/p/sbo/term-request/
-    about: Please direct requests for new terms for modeling frameworks to KiSAO.
+    url: https://github.com/EBI-BioModels/SBO/issues
+    about: Please direct requests for new terms for modeling frameworks to SBO.
 
   - name: Request a KiSAO term for a simulation algorithm, characteristic, or parameter
-    url: https://sourceforge.net/p/kisao/feature-requests/new/
+    url: https://github.com/SED-ML/KiSAO/issues/new/choose
     about: Please direct requests for new terms for algorithms, characteristics, and parameters to KiSAO.
 
   - name: Request an EDAM term for a modeling format
