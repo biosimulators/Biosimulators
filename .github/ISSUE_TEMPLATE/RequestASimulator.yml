@@ -1,6 +1,6 @@
 name: Nodeling framework, algorithm, format, or simulator
-Description: Request support for executing an additional modeling framework, algorithm, format, or simulation tool
-title: "[Simulation capabilities]"
+description: Request support for executing an additional modeling framework, algorithm, format, or simulation tool
+title: "[Simulation capabilities]: "
 labels:
   - "Additional simulation capabilities"
 assignees: []
