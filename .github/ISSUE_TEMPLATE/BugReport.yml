@@ -24,3 +24,19 @@ body:
         4. See error
     validations:
       required: false
+
+  - type: textarea
+    id: preferred-behavior
+    attributes:
+      label: How should BioSimulators have behaved?
+      description: Please describe what you expected to happen
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Please attach any screenshots that illustrate the bug
+    validations:
+      required: false
