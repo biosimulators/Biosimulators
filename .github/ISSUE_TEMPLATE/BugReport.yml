@@ -40,3 +40,43 @@ body:
       description: Please attach any screenshots that illustrate the bug
     validations:
       required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Which types of devices does the bug occur in?
+      multiple: true
+      options:
+        - Desktop
+        - Tablet
+        - Phone
+        - Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Which operating systems does the bug occur in?
+      multiple: true
+      options:
+        - Linux
+        - Mac OS X
+        - Windows
+        - Other
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Which browsers does the bug occur in?
+      multiple: true
+      options:
+        - Chrome
+        - Edge
+        - Firefox
+        - Safari
+        - Other
+    validations:
+      required: false
