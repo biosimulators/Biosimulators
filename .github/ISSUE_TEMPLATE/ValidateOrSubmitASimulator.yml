@@ -8,41 +8,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Instructions
+        ### Instructions
 
         Please use this form to validate or contribute a simulation tool, another version of the tool, or update a version of the tool.
 
         Instructions for creating simulation tools and examples are available at https://biosimulators.org/help.
 
-  - type: markdown
-    attributes:
-      value: |
-        ## Checklist for compliance with BioSimulators' conventions
-
-        - [ ] The simulation tool has been containerized
-        - [ ] The container for the tool provides a [BioSimulators-compliant command-line interface](https://biosimulators.org/help) 
-             - [ ] This interface supports the [COMBINE/OMEX archive](https://combinearchive.org/) format
-             - [ ] This interface supports the [SED-ML](https://sed-ml.org) format
-        - [ ] The `ENTRYPOINT` of the container is set to this command-line interface
-        - [ ] The specifications of the simulator follow the [BioSimulators format](https://biosimulators.org/conventions)
-        - [ ] Ontology terms needed to describe the capabilities of the tool have been approved
-             - [ ] Modeling frameworks: [SBO](https://github.com/EBI-BioModels/SBO/issues)
-             - [ ] Algorithms and their parameters: [KiSAO](https://github.com/SED-ML/KiSAO/issues/new/choose)
-             - [ ] Modeling formats: [EDAM](https://github.com/edamontology/edamontology/issues/new/choose)
-             - [ ] Licenses: [SPDX](https://tools.spdx.org/app/submit_new_license/)
-        - [ ] Optional, the source code for the simulation tool is publicly available
-        - [ ] Optional, the simulation tool is available through a software repository such as CRAN or PyPI
-        - [ ] Optional, examples, tutorials, and documentation for the simulation tool are publicly available
-        - [ ] Optional, the simulation tool is registered with [bio.tools](https://bio.tools/)
-        - [ ] Optional, the container uses [labels to provide Open Containers Initiative-compliant metadata](https://biosimulators.org/help)
-        - [ ] Optional, the container uses [labels to provide BioContainers-compliant metadata](https://biosimulators.org/help)
-        - [ ] Optional, the container is registered with [BioContainers](https://biocontainers.pro/)
-
   - type: textarea
-    id: submission
+    id: tool
     attributes:
-      label: "Submission"
-      description: "Please follow the YAML template below to indicate the id, version, and URL of the specifications of the simulation tool and whether you would like to submit your tool to the BioSimulators registry or just validate it"
+      label: "Simulation tool"
+      description: "Please follow the YAML template below to indicate the id, version, and URL of the specifications of the simulation tool and whether you would like to submit the tool to the BioSimulators registry or just validate it"
       value: |
         ---
         id: tellurium
@@ -55,10 +31,49 @@ body:
     validations:
       required: false
 
+  - type: checkboxes
+    id: compliance
+    attributes:
+      label: Support for BioSimulators' conventions
+      description: Please use this checklist to confirm your simulation tool is ready for submission to BioSimulators
+        options:
+          - label: The simulation tool is provided as a Docker image
+            required: true
+          - label: The `ENTRYPOINT` of the image is a [BioSimulators-compliant command-line interface](https://biosimulators.org/help) 
+            required: true
+          - label: This command-line interface supports the [COMBINE/OMEX archive](https://combinearchive.org/) format
+            required: true
+          - label: This command-line interface supports the [Simulation Experiment Description Markup Language (SED-ML)](https://combinearchive.org/) format
+            required: true
+          - label: This command-line interface supports the [Hierarchical Data Format (HDF5)](https://www.hdfgroup.org/solutions/hdf5/)
+            required: true
+          - label: The capabilities of the tool are described using [BioSimulators' format](https://biosimulators.org/conventions/simulator-specs)
+            required: true
+          - label: The modeling frameworks supported by the tool are described using [Systems Biology Ontology (SBO)](https://github.com/EBI-BioModels/SBO/issues) terms
+            required: true
+          - label: The simulation algorithms supported by the tool are described using [Kinetic Simulation Algorithm Ontology (KiSAO)](https://github.com/SED-ML/KiSAO/issues/new/choose) ontology terms
+            required: true
+          - label: The model formats supported by the tool are described using [EMBRACE Data and Methods (EDAM)](https://github.com/edamontology/edamontology/issues/new/choose) ontology terms
+            required: true
+          - label: The licenses supported by the tool are described using [Software Package Data Exchange (SPDX)](https://tools.spdx.org/app/submit_new_license/) identifiers
+            required: true
+          - label: The source code for the simulation tool is publicly available
+            required: false
+          - label: The simulation tool is available through a software repository such as CRAN or PyPI
+            required: false
+          - label: The simulation tool is registered with [bio.tools](https://bio.tools/)
+            required: false
+          - label: The Docker image provides [Open Containers Initiative-compliant metadata](https://biosimulators.org/help)
+            required: false
+          - label: The Docker image provides [BioContainers-compliant metadata](https://biosimulators.org/help)
+            required: false
+          - label: The Docker image is registered with [BioContainers](https://biocontainers.pro/)
+            required: false
+
   - type: markdown
     attributes:
       value: |
-        ## Post-submission approval workflow
+        ### Post-submission approval workflow
 
         Once you submit this issue, BioSimulators will use the following workflow to validate, approve, and optionally commit your simulator to the BioSimulators database:
 
@@ -81,6 +96,6 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Re-submission change list
+        ### Re-submission change list
 
         If you need to revise your simulator to pass the validation, please use this section to briefly describe the changes that you made.
