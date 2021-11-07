@@ -40,3 +40,16 @@ body:
       description: Please attach any screenshots that illustrate the bug
     validations:
       required: false
+
+  - type: dropdown
+    id: device
+    attribute:
+      label: Which types of devices does the bug occur in?
+      multiple: true
+      options:
+        - Desktop
+        - Tablet
+        - Phone
+        - Other
+    validations:
+      required: false
