@@ -1,8 +1,8 @@
 name: Validate or contribute a simulator
 description: Validate or contribute a containerized simulation tool, another version of the tool, or update a version of the tool.
-title: '[Simulation capabilities]: '
+title: "[Simulation capabilities]: "
 labels: 
-  - 'Validate/submit simulator'
+  - "Validate/submit simulator"
 assignees: []
 body:
   - type: markdown
@@ -36,7 +36,7 @@ body:
       - [ ] Optional, the container uses [labels to provide BioContainers-compliant metadata](https://biosimulators.org/help)
       - [ ] Optional, the container is registered with [BioContainers](https://biocontainers.pro/)
 
- - type: textarea
+  - type: textarea
     id: submission
     attributes:
       label: "Submission"
