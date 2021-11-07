@@ -1,0 +1,51 @@
+name: Nodeling framework, algorithm, format, or simulator
+Description: Request support for executing an additional modeling framework, algorithm, format, or simulation tool
+title: "[Simulation capabilities]"
+labels:
+  - "Additional simulation capabilities"
+assignees: []
+body:
+  - type: textarea
+    id: framework
+    attributes:
+      label: "Which modeling framework(s) would you like to execute?"
+      description: "Please describe the types of models you would like to execute."
+      placeholder: FBA, logical, ODE, SSA
+    validations:
+      required: false
+
+  - type: textarea
+    id: algorithms
+    attributes:
+      label: "Which simulation algorithm(s) would you like to execute?"
+      description: "Please describe the algorithms that you would like to execute."
+      placeholder: Next Reaction Method
+    validations:
+      required: false
+
+  - type: textarea
+    id: formats
+    attributes:
+      label: "Which model format(s) would you like to execute?"
+      description: "Please describe the model formats that you would like to execute."
+      placeholder: BNGL, CellML, SBML
+    validations:
+      required: false
+
+  - type: textarea
+    id: simulators
+    attributes:
+      label: "Which simulation tool(s) would you like to use to execute simulations?"
+      description: "Please describe the simulation tool you would like to use."
+      placeholder: COBRApy, COPASI, VCell
+    validations:
+      required: false
+
+  - type: textarea
+    id: features
+    attributes:
+      label: "Which features of these simulation tools do you need to execute simulations?"
+      description: "Please describe any specific features required for your work."
+      placeholder: delays, events, stop conditions
+    validations:
+      required: false
