@@ -588,6 +588,15 @@
       "contributions": [
         "data"
       ]
+    },
+    {
+      "login": "jpahle",
+      "name": "Jürgen Pahle",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5473011?v=4",
+      "profile": "http://juergen.pahle.de",
+      "contributions": [
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7,
