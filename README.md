@@ -72,7 +72,7 @@ Please see the links below for additional technical documentation.
 ## Utilizing multiple simulation tools within a single Python environment
 
 * **PySCeS** and **NEURON/NetPyNe** cannot be imported into the same Python memory. This appears to be due to using different versions of SUNDIALS. Importing both causes segmentation faults. One workaround is to import the tools in separate forks that have separate memories.
-* When installing **tellurium** or **MASSpy**, as well additional tools, it may be necessary to reinstall **numpy** (1.19.3) and **matplotlib** (3.2) after all tools have been installed. Those two particular microversions of numpy and matplotlib are necessary because the latest versions of tellurium (2.2.0) and MASSpy (0.1.2) require those specific microversions. This reinstallation is necessary when pip first installs more recent versions of numpy and matplotlib, compiles packages for those versions of numpy and matplotlib, and then replaces numpy or matplotlib with the older versions of numpy and matplotlib required by tellurium and MASSpy when tellurium and MASSpy are installed to satisfy their requirements of numpy and matplotlib. This problem stems from the limited control over environments provided by pip.
+* **CBMPy** requires versions of SymPy that have microversion numbers. Currently, this is incompatible with the latest version of **AMICI** which requires SymPy >= 1.9, but no microversion of 1.9 is yet available.
 
 ## License
 
