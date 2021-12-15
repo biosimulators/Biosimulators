@@ -73,6 +73,7 @@ jobs:
           context: Dockerfile-assets
           file: Dockerfile-base
           pull: true
+          load: true
           push: true
           tags: |
             ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
@@ -84,8 +85,6 @@ jobs:
 
       - name: Label base Docker image
         run: |
-          docker images
-          docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:buildcache
           docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${VERSION}
           docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
 
@@ -99,6 +98,7 @@ jobs:
           context: Dockerfile-assets
           file: Dockerfile
           pull: false
+          load: true
           push: true
           tags: |
             ghcr.io/biosimulators/biosimulators:${{github.sha}}
@@ -110,7 +110,6 @@ jobs:
 
       - name: Label Docker image
         run: |
-          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:buildcache
           docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:${VERSION}
           docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
 
@@ -153,13 +152,6 @@ jobs:
           release_name: Release ${{ steps.get-version-number.outputs.version }}
 
       # Push Docker image
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
-          docker push ghcr.io/biosimulators/biosimulators-base:buildcache
-          docker push ghcr.io/biosimulators/biosimulators:${{github.sha}}
-          docker push ghcr.io/biosimulators/biosimulators:buildcache
-
       - name: Push Docker image
         if: startsWith(github.ref, 'refs/tags/')
         env:
