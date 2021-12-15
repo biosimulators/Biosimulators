@@ -75,10 +75,8 @@ jobs:
           pull: true
           load: true
           push: false
-          images: |
-            ghcr.io/biosimulators/biosimulators-base
           tags: |
-            type=sha
+            ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}}
           labels: |
             org.opencontainers.image.revision=${{github.sha}}
             org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
@@ -106,10 +104,8 @@ jobs:
           pull: false
           load: true
           push: false
-          images: |
-            ghcr.io/biosimulators/biosimulators
           tags: |
-            type=sha
+            ghcr.io/biosimulators/biosimulators:sha-${{github.sha}}
           labels: |
             org.opencontainers.image.revision=${{github.sha}}
             org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
