@@ -79,12 +79,13 @@ jobs:
           labels: |
             org.opencontainers.image.revision=${{github.sha}}
             org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
-          cache-from: type=registry,ref=ghcr.io/biosimulators/biosimulators-base:dev
-          cache-to: type=inline
+          cache-from: type=registry,ref=ghcr.io/biosimulators/biosimulators-base:buildcache
+          cache-to: type=registry,ref=ghcr.io/biosimulators/biosimulators-base:buildcache,mode=max
 
       - name: Label base Docker image
         run: |
-          docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:dev
+          docker images
+          docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:buildcache
           docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${VERSION}
           docker image tag ghcr.io/biosimulators/biosimulators-base:${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
 
@@ -104,12 +105,12 @@ jobs:
           labels: |
             org.opencontainers.image.revision=${{github.sha}}
             org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
-          cache-from: type=registry,ref=ghcr.io/biosimulators/biosimulators:dev
-          cache-to: type=inline
+          cache-from: type=registry,ref=ghcr.io/biosimulators/biosimulators:buildcache
+          cache-to: type=registry,ref=ghcr.io/biosimulators/biosimulators:buildcache,mode=max
 
       - name: Label Docker image
         run: |
-          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:dev
+          docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:buildcache
           docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:${VERSION}
           docker image tag ghcr.io/biosimulators/biosimulators:${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
 
@@ -155,9 +156,9 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
-          docker push ghcr.io/biosimulators/biosimulators-base:dev
+          docker push ghcr.io/biosimulators/biosimulators-base:buildcache
           docker push ghcr.io/biosimulators/biosimulators:${{github.sha}}
-          docker push ghcr.io/biosimulators/biosimulators:dev
+          docker push ghcr.io/biosimulators/biosimulators:buildcache
 
       - name: Push Docker image
         if: startsWith(github.ref, 'refs/tags/')
