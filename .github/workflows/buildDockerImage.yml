@@ -75,9 +75,9 @@ jobs:
           pull: true
           push: true
           tags: biosimulators/biosimulators-base-stages:${{github.sha}}
-          labels:
-            - org.opencontainers.image.revision=${{github.sha}}
-            - org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
+          labels: |
+            org.opencontainers.image.revision=${{github.sha}}
+            org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
@@ -98,9 +98,9 @@ jobs:
           pull: false
           push: true
           tags: biosimulators/biosimulators-stages:${{github.sha}}
-          labels:
-            - org.opencontainers.image.revision=${{github.sha}}
-            - org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
+          labels: |
+            org.opencontainers.image.revision=${{github.sha}}
+            org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
