@@ -74,7 +74,8 @@ jobs:
           file: Dockerfile-base
           pull: true
           push: true
-          tags: ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
+          tags: |
+            ghcr.io/biosimulators/biosimulators-base:${{github.sha}}
           labels: |
             org.opencontainers.image.revision=${{github.sha}}
             org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
@@ -98,7 +99,8 @@ jobs:
           file: Dockerfile
           pull: false
           push: true
-          tags: ghcr.io/biosimulators/biosimulators:${{github.sha}}
+          tags: |
+            ghcr.io/biosimulators/biosimulators:${{github.sha}}
           labels: |
             org.opencontainers.image.revision=${{github.sha}}
             org.opencontainers.image.created=${{steps.get-timestamp.outputs.timestamp}}"
