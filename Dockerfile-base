@@ -7,7 +7,7 @@ LABEL \
     org.opencontainers.image.title="BioSimulators-base" \
     org.opencontainers.image.description="Docker image the dependencies for the simulation tools registered BioSimulators" \
     org.opencontainers.image.url="https://biosimulators.org/" \
-    org.opencontainers.image.documentation="https://biosimulators.org/help" \
+    org.opencontainers.image.documentation="https://docs.biosimulations.org/" \
     org.opencontainers.image.source="https://github.com/biosimulators/Biosimulators" \
     org.opencontainers.image.authors="BioSimulators Team <info@biosimulators.org>" \
     org.opencontainers.image.vendor="BioSimulators Team"
@@ -17,10 +17,6 @@ WORKDIR /app
 ###################################
 # update apt package database
 RUN apt-get update -y
-
-###################################
-# install pipenv
-RUN pip install pipenv
 
 ###################################
 # AMICI
@@ -132,14 +128,15 @@ RUN apt-get install --no-install-recommends -y \
     && cd libsbmlsim-${LSBMLSIM_VERSION} \
     && mkdir build \
     && cd build \
+    && PYTHON_MAJOR_MINOR_VERSION=$(echo $PYTHON_VERSION | cut -d . -f 1-2) \
     && cmake \
         -D LIBSBML_INCLUDE_DIR=/usr/include \
         -D LIBSBML_LIBRARY=/usr/lib64/libsbml.so \
         -D WITH_PYTHON=ON \
         -D PYTHON_PREFIX=${PY_PREFIX} \
         -D PYTHON_EXECUTABLE:FILEPATH=${PY_EXEC_PATH} \
-        -D PYTHON_INCLUDE_DIR:PATH=/usr/local/include/python3.9 \
-        -D PYTHON_LIBRARY:FILEPATH=/usr/local/lib/libpython3.9.so \
+        -D PYTHON_INCLUDE_DIR:PATH=/usr/local/include/python${PYTHON_MAJOR_MINOR_VERSION} \
+        -D PYTHON_LIBRARY:FILEPATH=/usr/local/lib/libpython${PYTHON_MAJOR_MINOR_VERSION}.so \
         .. \
     \
     && make \
@@ -163,9 +160,23 @@ RUN apt-get install -y --no-install-recommends \
 
 ###################################
 # NetPyNe
+RUN apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    make \
+    libmpich-dev \
+    mpi \
+    mpi-default-bin \
+    mpich
 
 ###################################
 # NEURON
+RUN apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    make
+RUN pip install neuron
+ENV NEURON_HOME=/usr/local
 
 ###################################
 # pyNeuroML, LEMS
@@ -177,6 +188,7 @@ RUN mkdir -p /usr/share/man/man1/ \
 # PySCeS
 
 # SUNDIALS
+# ignore certificate checking because certificate was expired as of 2021-11-10
 ARG SUNDIALS_VERSION=2.6.2
 RUN apt-get install -y --no-install-recommends \
         wget \
@@ -185,7 +197,7 @@ RUN apt-get install -y --no-install-recommends \
         g++ \
     \
     && cd /tmp \
-    && wget https://computing.llnl.gov/sites/default/files/inline-files/sundials-${SUNDIALS_VERSION}.tar.gz \
+    && wget --no-check-certificate https://computing.llnl.gov/sites/default/files/inline-files/sundials-${SUNDIALS_VERSION}.tar.gz \
     && tar xvvf sundials-${SUNDIALS_VERSION}.tar.gz \
     && cd sundials-${SUNDIALS_VERSION} \
     && mkdir build \
@@ -200,7 +212,6 @@ RUN apt-get install -y --no-install-recommends \
 ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # Assimulo
-ARG ASSIMULO_VERSION=3.2.5
 RUN apt-get install -y --no-install-recommends \
         g++ \
         gfortran \
@@ -215,6 +226,7 @@ RUN apt-get install -y --no-install-recommends \
         gfortran \
         libgfortran5
 
+# Configure PySCeS
 COPY .pys_usercfg.ini /Pysces/.pys_usercfg.ini
 COPY .pys_usercfg.ini /root/Pysces/.pys_usercfg.ini
 RUN mkdir -p /Pysces \

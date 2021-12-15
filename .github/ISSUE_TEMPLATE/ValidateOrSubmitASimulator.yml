@@ -29,11 +29,11 @@ body:
       description: |
         Please use this checklist to confirm your simulation tool is ready for submission to BioSimulators.
 
-        Instructions for creating simulation tools and examples are available at https://biosimulators.org/help.
+        Instructions for creating simulation tools and examples are available at https://docs.biosimulations.org/users/creating-tools/.
       options:
         - label: The simulation tool is provided as a Docker image
           required: true
-        - label: The `ENTRYPOINT` of the image is a [BioSimulators-compliant command-line interface](https://biosimulators.org/help) 
+        - label: The `ENTRYPOINT` of the image is a [BioSimulators-compliant command-line interface](https://docs.biosimulations.org/concepts/conventions/simulator-interfaces/) 
           required: true
         - label: This command-line interface supports the [COMBINE/OMEX archive](https://combinearchive.org/) format
           required: true
@@ -41,7 +41,7 @@ body:
           required: true
         - label: This command-line interface supports the [Hierarchical Data Format (HDF5)](https://www.hdfgroup.org/solutions/hdf5/)
           required: true
-        - label: The capabilities of the tool are described using [BioSimulators' format](https://biosimulators.org/conventions/simulator-specs)
+        - label: The capabilities of the tool are described using [BioSimulators' format](https://docs.biosimulations.org/concepts/conventions/simulator-capabilities/)
           required: true
         - label: The modeling frameworks supported by the tool are described using [Systems Biology Ontology (SBO)](https://github.com/EBI-BioModels/SBO/issues) terms
           required: true
@@ -57,9 +57,9 @@ body:
           required: false
         - label: The simulation tool is registered with [bio.tools](https://bio.tools/)
           required: false
-        - label: The Docker image provides [Open Containers Initiative-compliant metadata](https://biosimulators.org/help)
+        - label: The Docker image provides [Open Containers Initiative-compliant metadata](https://docs.biosimulations.org/concepts/conventions/simulator-images/)
           required: false
-        - label: The Docker image provides [BioContainers-compliant metadata](https://biosimulators.org/help)
+        - label: The Docker image provides [BioContainers-compliant metadata](https://docs.biosimulations.org/concepts/conventions/simulator-images/)
           required: false
         - label: The Docker image is registered with [BioContainers](https://biocontainers.pro/)
           required: false

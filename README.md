@@ -9,7 +9,7 @@ More comprehensive and more predictive models have the potential to advance biol
 
 [BioSimulators](https://biosimulators.org) addresses this challenge by providing is a registry of simulation tools, many of which provide consistent interfaces. These standardized simulation tools make it easier to find and run simulations. These standardized simulation tools build upon BioSimulators' standard for command-line interfaces for simulation tools, standard structure for Docker images of simulation tools, and format for capturing the capabilities (e.g., supporting modeling frameworks, simulation algorithms, modeling formats) of a simulation tool.
 
-The BioSimulators website provides a web application for browsing this registry. This website provides links to the individual simulators and their containers. Instructions for using the containers are available at https://biosimulators.org/help. Information about how to containerize a simulation tool and submit it to the registry is also available at https://biosimulators.org/help.
+The BioSimulators website provides a web application for browsing this registry. This website provides links to the individual simulators and their containers. Instructions for using the containers are available at https://docs.biosimulations.org/users/simulating-projects/. Information about how to containerize a simulation tool and submit it to the registry is also available at https://docs.biosimulations.org/users/creating-tools/.
 
 [runBioSimulations](https://run.biosimulations.org) provides a simple web application for using the containerized simulation tools in the BioSimulators registry to execute simulations. This makes it easy to run a broad range of simulations without having to install any software. [BioSimulations](https://biosimulations.org) provides a platform for sharing modeling studies, modifying published studies, and executing published studies using runBioSimulations.
 
@@ -29,7 +29,7 @@ We recommend that users use the hosted versions of runBioSimulations at https://
 
 Each validated simulation tool is available as Docker image. Most of the validated simulation tools are also available as Python APIs. See https://biosimulators.org for information about the interfaces available for each tool and where they can be obtained.
 
-A Docker image with a Python environment with APIs for most of the validated simulation tools is available at https://github.com/orgs/biosimulators/packages/container/package/biosimulators. An iPython shell for this environment can be launched by installing Docker and running the commands below. Information about using the Python APIs in the image is available at https://biosimulators.org/help.:
+A Docker image with a Python environment with APIs for most of the validated simulation tools is available at https://github.com/orgs/biosimulators/packages/container/package/biosimulators. An iPython shell for this environment can be launched by installing Docker and running the commands below. Information about using the Python APIs in the image is available at https://docs.biosimulations.org/users/simulating-projects/.:
 ```
 docker pull ghcr.io/biosimulators/biosimulators
 docker run -it --rm ghcr.io/biosimulators/biosimulators
@@ -39,7 +39,7 @@ Interactive tutorials for the Python APIs for simulation tools and for BioSimula
 
 ### Simulation software developers
 
-Information about how to containerize a simulation tool and information about how to submit simulation tools to the registry is available at https://biosimulators.org/help. We encourage developers to containerize their tools. However, BioSimulators also acccepts simulation tools that don't support BioSimulators' standards.
+Information about how to containerize a simulation tool and information about how to submit simulation tools to the registry is available at https://docs.biosimulations.org/users/publishing-tools/. We encourage developers to containerize their tools. However, BioSimulators also acccepts simulation tools that don't support BioSimulators' standards.
 
 ### Developers
 
@@ -49,7 +49,7 @@ We welcome contributions to BioSimulators! Please see the [Guide to Contributing
 
 Please see the links below for additional technical documentation.
 
-* Simulation tools, format converters, SED-ML/COMBINE validator, simulator test suite, and Python utilities: https://docs.biosimulators.org
+* Simulation tools, format converters, SED-ML/COMBINE validator, simulator test suite, and Python utilities: https://docs.biosimulations.org/users/biosimulators-packages/
 * REST API: https://api.biosimulators.org
 * Web site and database: https://docs.biosimulations.org
 

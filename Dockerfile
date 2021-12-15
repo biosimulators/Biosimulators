@@ -7,7 +7,7 @@ LABEL \
     org.opencontainers.image.title="BioSimulators" \
     org.opencontainers.image.description="Docker image with one Python environment with the validated simulation tools registered BioSimulators" \
     org.opencontainers.image.url="https://biosimulators.org/" \
-    org.opencontainers.image.documentation="https://biosimulators.org/help" \
+    org.opencontainers.image.documentation="https://docs.biosimulations.org/" \
     org.opencontainers.image.source="https://github.com/biosimulators/Biosimulators" \
     org.opencontainers.image.authors="BioSimulators Team <info@biosimulators.org>" \
     org.opencontainers.image.vendor="BioSimulators Team"
@@ -19,16 +19,15 @@ LABEL \
 COPY Pipfile /app/Pipfile
 COPY Pipfile.lock /app/Pipfile.lock
 
-# install environment
-RUN pipenv install --system --deploy
+# install pipenv and set up environment
+RUN pip install pipenv \
+    && pipenv install --system --deploy
 
-# force reinstall of matplotlib due to inconsistent version
-RUN pip uninstall -y matplotlib \
-    && pip install "matplotlib==3.2.0" \
-    && python -c "import matplotlib.font_manager"
+# set up matplotlib font manager
+RUN python -c "import matplotlib.font_manager"
 
 # install assimulo because pipenv fails to install it
-ARG ASSIMULO_VERSION=3.2.5
+ARG ASSIMULO_VERSION=3.2.8
 RUN pip install git+https://github.com/modelon-community/Assimulo.git@Assimulo-${ASSIMULO_VERSION}
 
 CMD /bin/bash /xvfb-startup.sh ipython
