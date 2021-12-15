@@ -88,6 +88,8 @@ jobs:
           docker image push ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}}
 
       - name: Label base Docker image
+        env:
+          VERSION: ${{ steps.get-version-number.outputs.version }}
         run: |
           docker image tag ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${VERSION}
           docker image tag ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
@@ -117,6 +119,8 @@ jobs:
           docker image push ghcr.io/biosimulators/biosimulators:sha-${{github.sha}}
 
       - name: Label Docker image
+        env:
+          VERSION: ${{ steps.get-version-number.outputs.version }}
         run: |
           docker image tag ghcr.io/biosimulators/biosimulators:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators:${VERSION}
           docker image tag ghcr.io/biosimulators/biosimulators:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
