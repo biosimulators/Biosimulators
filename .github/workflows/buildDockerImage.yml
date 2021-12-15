@@ -3,6 +3,7 @@ name: Build and push Docker image
 on:
   push:
     paths:
+      - '.github/workflows/buildDockerImage.yml'
       - 'Dockerfile'
       - 'Dockerfile-base'
       - 'Dockerfile-assets/**'
