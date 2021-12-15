@@ -84,15 +84,10 @@ jobs:
           cache-to: type=registry,ref=ghcr.io/biosimulators/biosimulators-base:buildcache,mode=max
 
       - name: Push base Docker image
-        run: |
-          docker image push ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}}
+        run: docker image push ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}}
 
       - name: Label base Docker image
-        env:
-          VERSION: ${{ steps.get-version-number.outputs.version }}
-        run: |
-          docker image tag ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${VERSION}
-          docker image tag ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
+        run: docker image tag ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators-base:latest
 
       - name: Maximize build space
         run: |
@@ -115,15 +110,10 @@ jobs:
           cache-to: type=registry,ref=ghcr.io/biosimulators/biosimulators:buildcache,mode=max
 
       - name: Push Docker image
-        run: |
-          docker image push ghcr.io/biosimulators/biosimulators:sha-${{github.sha}}
+        run: docker image push ghcr.io/biosimulators/biosimulators:sha-${{github.sha}}
 
       - name: Label Docker image
-        env:
-          VERSION: ${{ steps.get-version-number.outputs.version }}
-        run: |
-          docker image tag ghcr.io/biosimulators/biosimulators:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators:${VERSION}
-          docker image tag ghcr.io/biosimulators/biosimulators:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
+        run: docker image tag ghcr.io/biosimulators/biosimulators:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators:latest
 
       - name: Maximize build space
         run: |
@@ -169,6 +159,9 @@ jobs:
         env:
           VERSION: ${{ steps.get-version-number.outputs.version }}
         run: |
+          docker image tag ghcr.io/biosimulators/biosimulators-base:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators-base:${VERSION}
+          docker image tag ghcr.io/biosimulators/biosimulators:sha-${{github.sha}} ghcr.io/biosimulators/biosimulators:${VERSION}
+
           docker push ghcr.io/biosimulators/biosimulators-base:${VERSION}
           docker push ghcr.io/biosimulators/biosimulators-base:latest
           docker push ghcr.io/biosimulators/biosimulators:${VERSION}
