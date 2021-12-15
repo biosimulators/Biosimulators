@@ -71,7 +71,7 @@ jobs:
           rm -r xpp
 
       - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
-        uses: eWaterCycle/setup-singularity@v6
+        uses: eWaterCycle/setup-singularity@v7
         with:
           singularity-version: 3.6.4
 
