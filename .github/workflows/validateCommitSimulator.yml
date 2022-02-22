@@ -70,10 +70,40 @@ jobs:
           rm xppaut_latest.tar.gz
           rm -r xpp
 
-      - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
-        uses: eWaterCycle/setup-singularity@v7
+      - name: Install Go (for Singularity)
+        uses: actions/setup-go@v2
         with:
-          singularity-version: 3.9.1
+          go-version: '^1.13.1' # The Go version to download (if necessary) and use.
+
+      - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
+        env:
+          GO_VERSION: 1.17.2
+          SINGULARITY_VERSION: 3.9.5
+          OS: linux
+          ARCH: amd64
+        run: |
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            libseccomp-dev \
+            pkg-config \
+            squashfs-tools \
+            cryptsetup
+
+          wget https://dl.google.com/go/go$GO_VERSION.$OS-$ARCH.tar.gz
+          sudo tar -C /usr/local -xzvf go$GO_VERSION.$OS-$ARCH.tar.gz
+          rm go$GO_VERSION.$OS-$ARCH.tar.gz
+
+          echo 'export PATH=/usr/local/go/bin:$PATH' >> ~/.bashrc
+          source ~/.bashrc
+          echo "/usr/local/go/bin" >> $GITHUB_PATH
+
+          wget https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
+          tar -xzf singularity-ce-${SINGULARITY_VERSION}.tar.gz
+          cd singularity-ce-${SINGULARITY_VERSION}
+
+          ./mconfig
+          make -C builddir
+          sudo make -C builddir install
 
       - name: Checkout BioSimulators test suite
         uses: actions/checkout@v2
