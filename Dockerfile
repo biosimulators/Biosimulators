@@ -27,7 +27,7 @@ RUN pip install pipenv \
 RUN python -c "import matplotlib.font_manager"
 
 # install assimulo because pipenv fails to install it
-ARG ASSIMULO_VERSION=3.2.8
+ARG ASSIMULO_VERSION=3.2.9
 RUN pip install git+https://github.com/modelon-community/Assimulo.git@Assimulo-${ASSIMULO_VERSION}
 
 CMD /bin/bash /xvfb-startup.sh ipython
