@@ -11,7 +11,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/2848297?v=4",
       "profile": "https://www.karrlab.org",
       "contributions": [
-        "code"
+        "code",
+        "financial"
       ]
     },
     {
@@ -30,7 +31,9 @@
       "profile": "https://github.com/moraru",
       "contributions": [
         "tool",
-        "ideas"
+        "ideas",
+        "infra",
+        "financial"
       ]
     },
     {
@@ -178,7 +181,8 @@
       "profile": "http://www.sys-bio.org/",
       "contributions": [
         "tool",
-        "ideas"
+        "ideas",
+        "financial"
       ]
     },
     {
@@ -594,6 +598,152 @@
       "name": "Jürgen Pahle",
       "avatar_url": "https://avatars.githubusercontent.com/u/5473011?v=4",
       "profile": "http://juergen.pahle.de",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "AzrafAnwar",
+      "name": "AzrafAnwar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29236918?v=4",
+      "profile": "https://github.com/AzrafAnwar",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kirichoi",
+      "name": "Kiri Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7672320?v=4",
+      "profile": "https://github.com/kirichoi",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "cdiener",
+      "name": "Christian Diener",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7153935?v=4",
+      "profile": "http://cdiener.com/",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "artgoldberg",
+      "name": "Arthur P Goldberg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33882?v=4",
+      "profile": "https://www.mountsinai.org/profiles/arthur-p-goldberg",
+      "contributions": [
+        "financial"
+      ]
+    },
+    {
+      "login": "joseph-hellerstein",
+      "name": "Joseph Hellerstein",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11179077?v=4",
+      "profile": "https://github.com/joseph-hellerstein",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "matthiaskoenig",
+      "name": "Matthias König",
+      "avatar_url": "https://avatars.githubusercontent.com/u/900538?v=4",
+      "profile": "https://livermetabolism.com/",
+      "contributions": [
+        "ideas",
+        "tool"
+      ]
+    },
+    {
+      "login": "rsmsheriff",
+      "name": "Rahuman Sheriff",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7849690?v=4",
+      "profile": "https://github.com/rsmsheriff",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "ntung",
+      "name": "Tung Nguyen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/663341?v=4",
+      "profile": "https://www.itersdesktop.com/",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "synchon",
+      "name": "Synchon Mandal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13277639?v=4",
+      "profile": "https://github.com/synchon",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "gmarupilla",
+      "name": "GMarupilla",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53095348?v=4",
+      "profile": "https://github.com/gmarupilla",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "AnkitaxPriya",
+      "name": "Ankita",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44089458?v=4",
+      "profile": "https://github.com/AnkitaxPriya",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "drashtipatoliya17",
+      "name": "Drashti Patoliya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52856536?v=4",
+      "profile": "https://github.com/drashtipatoliya17",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "jcschaff",
+      "name": "Jim Schaff",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20616724?v=4",
+      "profile": "http://vcell.org/",
+      "contributions": [
+        "ideas",
+        "financial"
+      ]
+    },
+    {
+      "login": "mpw6",
+      "name": "Mike Wilson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/400595?v=4",
+      "profile": "https://hpc.uchc.edu/",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "hsorby",
+      "name": "Hugh Sorby",
+      "avatar_url": "https://avatars.githubusercontent.com/u/778048?v=4",
+      "profile": "https://github.com/hsorby",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "sanjayankur31",
+      "name": "Ankur Sinha",
+      "avatar_url": "https://avatars.githubusercontent.com/u/102575?v=4",
+      "profile": "https://ankursinha.in/",
       "contributions": [
         "tool"
       ]
