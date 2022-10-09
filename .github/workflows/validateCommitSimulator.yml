@@ -133,7 +133,7 @@ jobs:
 
       - id: validateCommitSimulator
         name: Validate and commit simulator
-        uses: biosimulators/xvfb-action@v1.0.1
+        uses: GabrielBB/xvfb-action@v1
         env:
           GH_REPO: ${{ github.repository }}
           GH_ACTION_RUN_ID: ${{ github.run_id }}
