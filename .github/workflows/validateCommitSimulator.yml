@@ -161,6 +161,10 @@ jobs:
           working-directory: ${{ github.workspace }}
           run: python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
+      - name: Setup tmate session 3 (if failed)
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ failure() }}
+        
       - name: Setup tmate session 3
         uses: mxschmitt/action-tmate@v3
 
