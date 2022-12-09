@@ -68,7 +68,7 @@ jobs:
           cp Dockerfile-base Dockerfile-assets/
 
       - name: Build base image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: Dockerfile-assets
           file: Dockerfile-base
@@ -94,7 +94,7 @@ jobs:
           docker system prune -f
 
       - name: Build image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: Dockerfile-assets
           file: Dockerfile
