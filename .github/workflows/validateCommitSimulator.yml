@@ -54,13 +54,12 @@ jobs:
           sudo apt-get install -y --no-install-recommends perl
 
       - name: Install XPP
-      # wget http://www.math.pitt.edu/~bard/bardware/xppaut_latest.tar.gz # math.pitt.edu went down, using an internet archive temporarily.
         run: |
           sudo apt-get update -y
           sudo apt-get install -y --no-install-recommends wget make gcc libx11-dev libc6-dev
 
           cd /tmp 
-          wget https://web.archive.org/web/20210425172021/http://www.math.pitt.edu/~bard/bardware/xppaut_latest.tar.gz
+          wget --tries=3 http://www.math.pitt.edu/~bard/bardware/xppaut_latest.tar.gz || wget https://web.archive.org/web/20210425172021/http://www.math.pitt.edu/~bard/bardware/xppaut_latest.tar.gz
           mkdir xpp
           tar zxvf xppaut_latest.tar.gz --directory xpp
           cd xpp
