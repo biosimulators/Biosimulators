@@ -146,7 +146,9 @@ jobs:
           # RUNBIOSIMULATIONS_API_ENDPOINT: https://api.biosimulations.dev/ # uncomment to use the dev deployment of the BioSimulators API
         with:
           working-directory: ${{ github.workspace }}
-          run: python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
+          run: |
+            python -m pip install --upgrade biosimulators_utils
+            python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       - name: Setup tmate session 3 (if failed)
         uses: mxschmitt/action-tmate@v3
