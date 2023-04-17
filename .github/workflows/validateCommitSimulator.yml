@@ -55,20 +55,7 @@ jobs:
 
       - name: Install XPP
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y --no-install-recommends wget make gcc libx11-dev libc6-dev
-
-          cd /tmp 
-          wget --tries=3 http://www.math.pitt.edu/~bard/bardware/xppaut_latest.tar.gz || wget https://web.archive.org/web/20210425172021/http://www.math.pitt.edu/~bard/bardware/xppaut_latest.tar.gz
-          mkdir xpp
-          tar zxvf xppaut_latest.tar.gz --directory xpp
-          cd xpp
-          make
-          sudo make install
-
-          cd /tmp
-          rm xppaut_latest.tar.gz
-          rm -r xpp
+          sudo apt-get install -y --no-install-recommends xppaut
 
       - name: Install Go (for Singularity)
         uses: actions/setup-go@v3
