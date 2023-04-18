@@ -60,7 +60,7 @@ jobs:
         name: Get timestamp
         run: |
           TIMESTAMP=$(date --rfc-3339=seconds | sed 's/ /T/')
-          echo "::set-output name=timestamp::$TIMESTAMP"
+          echo "timestamp=$TIMESTAMP" >> $GITHUB_OUTPUT
 
       - name: Copy Dockerfile to Dockerfile-assets
         run: |
@@ -141,7 +141,7 @@ jobs:
           TAG: ${{ github.ref }}
         run: |
           version="${TAG/refs\/tags\//}"
-          echo "::set-output name=version::$version"
+          echo "version=$version" >> $GITHUB_OUTPUT
 
       # Create GitHub release
       - name: Create GitHub release
