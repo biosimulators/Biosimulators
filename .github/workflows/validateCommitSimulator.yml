@@ -97,7 +97,7 @@ jobs:
         with:
           repository: biosimulators/biosimulators_test_suite
           fetch-depth: 1
-          ref: deploy
+          ref: depFixes
 
       - name: Install simulator validation utilities
         working-directory: ${{ github.workspace }}
