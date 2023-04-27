@@ -39,7 +39,8 @@ jobs:
 
       - name: Install pip and setuptools
         run: |
-          python -m pip install pip==20.3.4
+          wget https://bootstrap.pypa.io/get-pip.py
+          python get-pip.py pip==20.3.4
           python -m pip install --upgrade setuptools
 
       - name: Install Java # for pyNeuroML
