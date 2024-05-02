@@ -27,7 +27,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.9'
+          python-version: '3.12'
 
       #- name: Setup pip cache
       #  uses: actions/cache@v2
@@ -104,7 +104,7 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           python -m pip cache purge
-          python -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,bngl,cellml,lems,neuroml,sbml,smoldyn]"
+          python -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
           python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
           python -m pip install -e .[all]
           python --version
