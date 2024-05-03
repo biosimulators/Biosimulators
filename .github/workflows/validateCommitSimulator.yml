@@ -43,6 +43,11 @@ jobs:
           python -m pip install --upgrade setuptools
           python -m pip install pip==20.3.4
 
+      - name: Install pipenv
+        run: |
+          pyenv global 3.12
+          pip install pipenv
+
       - name: Install Java # for pyNeuroML
         uses: actions/setup-java@v3
         with:
