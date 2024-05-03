@@ -44,18 +44,6 @@ jobs:
           # python get-pip.py pip==20.3.4
           python -m pip install pip==20.3.4
 
-      - name: Install simulator validation utilities
-      # Note: move this below installations of perl, etc. if we need to change this to install bngl again.
-        working-directory: ${{ github.workspace }}
-        run: |
-          # python -m pip cache purge
-          # python -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
-          # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
-          python -m pip install docker python-libsbml
-          python -m pip install -e .[all]
-          python --version
-          python -m pip freeze
-
       - name: Install Java # for pyNeuroML
         uses: actions/setup-java@v3
         with:
@@ -112,6 +100,17 @@ jobs:
           repository: biosimulators/biosimulators_test_suite
           fetch-depth: 1
           ref: depFixes
+
+      - name: Install simulator validation utilities
+        working-directory: ${{ github.workspace }}
+        run: |
+          # python -m pip cache purge
+          # python -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
+          # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
+          python -m pip install docker python-libsbml
+          python -m pip install -e .[all]
+          python --version
+          python -m pip freeze
 
       - name: Login into Docker registries
         run: |
