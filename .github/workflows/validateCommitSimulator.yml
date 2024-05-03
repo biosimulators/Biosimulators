@@ -40,17 +40,15 @@ jobs:
       - name: Install pip and setuptools
         run: |
           python -m pip install --upgrade setuptools
-          wget https://bootstrap.pypa.io/get-pip.py
-          python get-pip.py pip==20.3.4
-          python get-pip.py pip==20.3.4
+          # wget https://bootstrap.pypa.io/get-pip.py
+          # python get-pip.py pip==20.3.4
           python -m pip install pip==20.3.4
-          # python -m pip install pip==20.3.4
 
       - name: Install simulator validation utilities
       # Note: move this below installations of perl, etc. if we need to change this to install bngl again.
         working-directory: ${{ github.workspace }}
         run: |
-          python -m pip cache purge
+          # python -m pip cache purge
           # python -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
           # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
           python -m pip install docker python-libsbml
