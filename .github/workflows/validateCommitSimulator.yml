@@ -7,7 +7,7 @@ on:
 jobs:
   validateCommit:
     name: Validate and/or commit simulator
-    runs-on: ubuntu-20.04 # includes Docker
+    runs-on: ubuntu-22.04 # includes Docker
     if: |
       github.event.issue.state == 'open'
       && contains(github.event.issue.labels.*.name, 'Validate/submit simulator')
@@ -67,7 +67,7 @@ jobs:
       - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
         env:
           GO_VERSION: 1.17.2
-          SINGULARITY_VERSION: 4.1.5
+          SINGULARITY_VERSION: 3.11.5
           OS: linux
           ARCH: amd64
         run: |
