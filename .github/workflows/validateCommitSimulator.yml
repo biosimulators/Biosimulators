@@ -67,7 +67,7 @@ jobs:
       - name: Install Singularity # to validate that the Docker image can be converted into a Singularity image
         env:
           GO_VERSION: 1.17.2
-          SINGULARITY_VERSION: 3.11.5
+          SINGULARITY_VERSION: 4.1.5
           OS: linux
           ARCH: amd64
         run: |
