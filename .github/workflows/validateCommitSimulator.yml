@@ -59,6 +59,10 @@ jobs:
         run: |
           sudo apt-get install -y --no-install-recommends xppaut
 
+      - name: Check Docker Version
+        run: |
+          docker --version
+      
       - name: Install Go (for Singularity)
         uses: actions/setup-go@v3
         with:
