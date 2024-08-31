@@ -61,7 +61,7 @@ jobs:
 
       - name: Check Docker Version
         run: |
-          docker --version
+          docker version
       
       - name: Install Go (for Singularity)
         uses: actions/setup-go@v3
