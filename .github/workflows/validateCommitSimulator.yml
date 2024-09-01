@@ -128,7 +128,7 @@ jobs:
           # python3.11 -m pip cache purge
           # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
           python3.11 -m pip install docker python-libsbml "urllib3<2.0"
-          python3.11 -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
+          python3.11 -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,bngl,cellml,lems,neuroml,sbml,smoldyn]"
 
       - name: Intall BioSimulators Test Suite
         run: |
