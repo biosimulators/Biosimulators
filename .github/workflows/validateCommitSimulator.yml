@@ -67,6 +67,10 @@ jobs:
           #ln -s /usr/include/locale.h /usr/include/xlocale.h
           #python -m pip install Cython==0.29.37
           #python -m pip install pkgconfig
+          rm -rf ~/.local/share/virtualenvs
+          echo ''
+          echo '<<$(python --version)>>'
+          echo ''
           python -m pip install --no-binary=h5py h5py
 
       - name: Check Docker Version
