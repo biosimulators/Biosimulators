@@ -74,7 +74,7 @@ jobs:
           echo $(python3.11 --version)
           echo $(which python3.11)
           echo '---'
-          python3.11 -m pip install --no-binary=h5py "h5py==3.6.0"
+          python3.11 -m pip install --no-binary=h5py h5py
 
       - name: Check Docker Version
         run: |
