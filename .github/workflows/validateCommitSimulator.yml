@@ -59,9 +59,10 @@ jobs:
         run: |
           sudo apt-get install -y --no-install-recommends xppaut
 
-      - name: Install HDF5 (and GCC)
+      - name: Install HDF5 (and build tools)
         run: |
-          sudo apt-get install -y libhdf5-dev gcc
+          sudo apt-get install -y libhdf5-serial-dev hdf5-tools libhdf5-dev 
+          sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
 
       - name: Check Docker Version
         run: |
