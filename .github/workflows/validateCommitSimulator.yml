@@ -27,7 +27,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.11'
+          python-version: '3.11-dev'
 
       #- name: Setup pip cache
       #  uses: actions/cache@v2
@@ -59,14 +59,15 @@ jobs:
         run: |
           sudo apt-get install -y --no-install-recommends xppaut
 
-      - name: Install HDF5 (and build tools)
+      - name: Install HDF5 and H5PY
         run: |
           sudo apt-get install -y libhdf5-serial-dev hdf5-tools libhdf5-dev 
-          sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
+          sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev build-essentials
           #python -m pip install -U pip testresources
           #ln -s /usr/include/locale.h /usr/include/xlocale.h
-          python -m pip install Cython==0.29.36
+          python -m pip install Cython==0.29.37
           #python -m pip install pkgconfig
+          python -m pip install --no-binary=h5py h5py
 
       - name: Check Docker Version
         run: |
