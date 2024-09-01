@@ -126,10 +126,10 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           # python3.11 -m pip cache purge
-          python3.11 -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
           # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
           python3.11 -m pip install docker python-libsbml "urllib3<2.0"
           python3.11 -m pip install -e .[all]
+          python3.11 -m pip install --force-reinstall --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
           python3.11 --version
           python3.11 -m pip freeze
 
