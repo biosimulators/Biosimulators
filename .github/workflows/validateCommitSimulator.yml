@@ -68,8 +68,8 @@ jobs:
           #python3.11 -m pip install -U pip testresources
           #ln -s /usr/include/locale.h /usr/include/xlocale.h
           python3.11 -m pip install Cython==0.29.36
+          python3.11 -m pip install numpy==1.23.5
           #python3.11 -m pip install pkgconfig
-          rm -rf ~/.local/share/virtualenvs
           echo '---'
           echo $(python3.11 --version)
           echo $(which python3.11)
