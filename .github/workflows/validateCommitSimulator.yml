@@ -62,10 +62,10 @@ jobs:
       - name: Install HDF5 and H5PY
         run: |
           sudo apt-get install -y libhdf5-serial-dev hdf5-tools libhdf5-dev 
-          sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev build-essentials
+          sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev build-essential
           #python -m pip install -U pip testresources
           #ln -s /usr/include/locale.h /usr/include/xlocale.h
-          python -m pip install Cython==0.29.37
+          #python -m pip install Cython==0.29.37
           #python -m pip install pkgconfig
           python -m pip install --no-binary=h5py h5py
 
