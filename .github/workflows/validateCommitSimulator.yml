@@ -63,10 +63,10 @@ jobs:
         run: |
           sudo apt-get install -y libhdf5-serial-dev hdf5-tools libhdf5-dev 
           sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
-          python -m pip install -U pip testresources setuptools
+          #python -m pip install -U pip testresources
           #ln -s /usr/include/locale.h /usr/include/xlocale.h
           python -m pip install Cython==0.29.36
-          python -m pip install pkgconfig
+          #python -m pip install pkgconfig
 
       - name: Check Docker Version
         run: |
