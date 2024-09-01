@@ -39,10 +39,10 @@ jobs:
 
       - name: Install pip and setuptools
         run: |
-          python -m pip install --upgrade setuptools
+          python3.11 -m pip install --upgrade setuptools
           # wget https://bootstrap.pypa.io/get-pip.py
           # python get-pip.py pip==20.3.4
-          python -m pip install pip==20.3.4
+          python3.11 -m pip install pip==20.3.4
 
       - name: Install Java # for pyNeuroML
         uses: actions/setup-java@v3
@@ -63,16 +63,16 @@ jobs:
         run: |
           sudo apt-get install -y libhdf5-serial-dev hdf5-tools libhdf5-dev 
           sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev build-essential
-          #python -m pip install -U pip testresources
+          #python3.11 -m pip install -U pip testresources
           #ln -s /usr/include/locale.h /usr/include/xlocale.h
-          #python -m pip install Cython==0.29.37
-          #python -m pip install pkgconfig
+          #python3.11 -m pip install Cython==0.29.37
+          #python3.11 -m pip install pkgconfig
           rm -rf ~/.local/share/virtualenvs
           echo '---'
-          echo $(python --version)
-          echo $(which python)
+          echo $(python3.11 --version)
+          echo $(which python3.11)
           echo '---'
-          python -m pip install --no-binary=h5py h5py
+          python3.11 -m pip install --no-binary=h5py h5py
 
       - name: Check Docker Version
         run: |
@@ -123,13 +123,13 @@ jobs:
       - name: Install simulator validation utilities
         working-directory: ${{ github.workspace }}
         run: |
-          # python -m pip cache purge
-          python -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
+          # python3.11 -m pip cache purge
+          python3.11 -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,sbml]"
           # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
-          python -m pip install docker python-libsbml "urllib3<2.0"
-          python -m pip install -e .[all]
-          python --version
-          python -m pip freeze
+          python3.11 -m pip install docker python-libsbml "urllib3<2.0"
+          python3.11 -m pip install -e .[all]
+          python3.11 --version
+          python3.11 -m pip freeze
 
       - name: Login into Docker registries
         run: |
@@ -174,9 +174,9 @@ jobs:
           #   python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
           working-directory: ${{ github.workspace }}
           run: |
-            python -m pip install --force-reinstall "requests==2.31.0"
-            python -m pip install --force-reinstall "urllib3==1.26.20"
-            python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
+            python3.11 -m pip install --force-reinstall "requests==2.31.0"
+            python3.11 -m pip install --force-reinstall "urllib3==1.26.20"
+            python3.11 -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       # If tmate is useful for a particular debugging issue, comment this back in:
       # - name: Setup tmate session 3 (if failed)
