@@ -147,7 +147,7 @@ jobs:
 
       - name: Install BioSimulators Test Suite with Poetry
         shell: bash
-        run: poetry install --no-interaction --with bngl,cellml,lems,neuroml,sbml,simularium,escher,containers,logging
+        run: poetry install --with logging
 
       - name: Login into Docker registries
         run: |
