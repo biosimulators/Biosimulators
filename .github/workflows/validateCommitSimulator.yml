@@ -121,7 +121,7 @@ jobs:
           repository: biosimulators/biosimulators_test_suite
           fetch-depth: 1
           # ref: depFixes
-          ref: poetry_build
+          ref: poetry-build
 
       # - name: Install simulator validation utilities
       #   working-directory: ${{ github.workspace }}
