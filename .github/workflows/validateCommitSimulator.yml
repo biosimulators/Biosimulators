@@ -61,20 +61,20 @@ jobs:
         run: |
           sudo apt-get install -y --no-install-recommends xppaut
 
-      - name: Install HDF5 and H5PY
-        run: |
-          sudo apt-get install -y libhdf5-serial-dev hdf5-tools libhdf5-dev 
-          sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev build-essential
-          #python3.11 -m pip install -U pip testresources
-          #ln -s /usr/include/locale.h /usr/include/xlocale.h
-          python3.11 -m pip install Cython==0.29.36
-          python3.11 -m pip install numpy==1.23.5
-          #python3.11 -m pip install pkgconfig
-          echo '---'
-          echo $(python3.11 --version)
-          echo $(which python3.11)
-          echo '---'
-          python3.11 -m pip install --no-binary=h5py h5py
+      # - name: Install HDF5 and H5PY
+      #   run: |
+      #     sudo apt-get install -y libhdf5-serial-dev hdf5-tools libhdf5-dev 
+      #     sudo apt-get install -y zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev build-essential
+      #     #python3.11 -m pip install -U pip testresources
+      #     #ln -s /usr/include/locale.h /usr/include/xlocale.h
+      #     python3.11 -m pip install Cython==0.29.36
+      #     python3.11 -m pip install numpy==1.23.5
+      #     #python3.11 -m pip install pkgconfig
+      #     echo '---'
+      #     echo $(python3.11 --version)
+      #     echo $(which python3.11)
+      #     echo '---'
+      #     python3.11 -m pip install --no-binary=h5py h5py
 
       - name: Check Docker Version
         run: |
@@ -120,21 +120,34 @@ jobs:
         with:
           repository: biosimulators/biosimulators_test_suite
           fetch-depth: 1
-          ref: depFixes
+          # ref: depFixes
+          ref: poetry_build
 
-      - name: Install simulator validation utilities
-        working-directory: ${{ github.workspace }}
-        run: |
-          # python3.11 -m pip cache purge
-          # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
-          python3.11 -m pip install docker python-libsbml "urllib3<2.0"
-          python3.11 -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,bngl,cellml,lems,neuroml,sbml,smoldyn]"
+      # - name: Install simulator validation utilities
+      #   working-directory: ${{ github.workspace }}
+      #   run: |
+      #     # python3.11 -m pip cache purge
+      #     # python -m pip install git+https://github.com/biosimulators/RBApy.git#egg=rbapy
+      #     python3.11 -m pip install docker python-libsbml "urllib3<2.0"
+      #     python3.11 -m pip install --no-cache-dir "biosimulators_utils @ git+https://github.com/biosimulators/Biosimulators_utils@depFixes#egg=biosimulators_utils[containers,bngl,cellml,lems,neuroml,sbml,smoldyn]"
 
-      - name: Intall BioSimulators Test Suite
+      # - name: Intall BioSimulators Test Suite
+      #   run: |
+      #     python3.11 -m pip install -e .[all]
+      #     python3.11 --version
+      #     python3.11 -m pip freeze
+      - name: Install Poetry
+        env:
+          POETRY_VERSION: "1.7.1"
+        shell: bash
         run: |
-          python3.11 -m pip install -e .[all]
-          python3.11 --version
-          python3.11 -m pip freeze
+          curl -sSL https://install.python-poetry.org | python - -y
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          poetry config virtualenvs.in-project true
+
+      - name: Install BioSimulators Test Suite with Poetry
+        shell: bash
+        run: poetry install --no-interaction --with bngl,cellml,lems,neuroml,sbml,simularium,escher,containers,logging
 
       - name: Login into Docker registries
         run: |
@@ -180,8 +193,9 @@ jobs:
           working-directory: ${{ github.workspace }}
           run: |
             #python3.11 -m pip install --force-reinstall "requests==2.31.0"
-            python3.11 -m pip install --force-reinstall "urllib3==1.26.20"
-            python3.11 -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
+            #python3.11 -m pip install --force-reinstall "urllib3==1.26.20"
+            #python3.11 -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
+            poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       # If tmate is useful for a particular debugging issue, comment this back in:
       # - name: Setup tmate session 3 (if failed)
