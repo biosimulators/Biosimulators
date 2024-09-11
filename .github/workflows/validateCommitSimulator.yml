@@ -201,7 +201,7 @@ jobs:
       #   timeout-minutes: 40
 
       - name: Save test results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: success() || failure()
         with:
           name: Validation test results
