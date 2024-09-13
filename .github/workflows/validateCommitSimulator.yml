@@ -38,9 +38,6 @@ jobs:
       #    key: ${{ runner.os }}-pip-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.txt') }}-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.optional.txt') }}
       #    restore-keys: |
       #      ${{ runner.os }}-pip-
-      - name: Check home var # for BioNetGen
-        run: |
-          echo $HOME
      
       - name: Install pip and setuptools
         run: |
@@ -156,8 +153,6 @@ jobs:
         run: |
           mkdir -p /home/runner/poetry-install-dir
           python3.11 -m venv /home/runner/poetry-install-dir
-          ls /home/runner/poetry-install-dir
-          ls /home/runner/poetry-install-dir/bin
           /home/runner/poetry-install-dir/bin/python -m pip install -U pip setuptools
           /home/runner/poetry-install-dir/bin/python -m pip install poetry
 
@@ -208,7 +203,7 @@ jobs:
           #  python3.11 -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
           working-directory: ${{ github.workspace }}
           run: |
-           /home/runner/poetry-install-dir/poetry-install-dir/bin/poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
+           /home/runner/poetry-install-dir/bin/poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       - name: Save test results
         uses: actions/upload-artifact@v4
