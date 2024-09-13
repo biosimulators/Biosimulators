@@ -136,18 +136,30 @@ jobs:
       #     python3.11 -m pip install -e .[all]
       #     python3.11 --version
       #     python3.11 -m pip freeze
-      - name: Install Poetry
-        env:
-          POETRY_VERSION: "1.7.1"
+      # - name: Install Poetry
+      #   env:
+      #     POETRY_VERSION: "1.7.1"
+      #   shell: bash
+      #   run: |
+      #     curl -sSL https://install.python-poetry.org | python - -y
+      #     echo "$HOME/.local/bin" >> $GITHUB_PATH
+      #     poetry config virtualenvs.in-project true
+
+      # Since we may have projects that use poetry, and singularity containers are not fully self-contained
+      # we need to avoid accidentally using the test-suite's poetry installation, and not the one intended 
+      # to be used in the singularity container
+      - name: Install Virtualized Poetry
         shell: bash
         run: |
-          curl -sSL https://install.python-poetry.org | python - -y
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-          poetry config virtualenvs.in-project true
+          python3.11 -m pip install venv
+          mkdir $HOME/poetry-install-dir
+          python3.11 -m venv $HOME/poetry-install-dir
+          $HOME/poetry-install-dir/bin/pip install -U pip setuptools
+          $HOME/poetry-install-dir/bin/pip install poetry
 
       - name: Install BioSimulators Test Suite with Poetry
         shell: bash
-        run: poetry install --all-extras
+        run: $HOME/poetry-install-dir/bin/poetry install --all-extras
 
       - name: Login into Docker registries
         run: |
@@ -192,7 +204,7 @@ jobs:
           #  python3.11 -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
           working-directory: ${{ github.workspace }}
           run: |
-           poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
+           $HOME/poetry-install-dir/bin/poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       # If tmate is useful for a particular debugging issue, comment this back in:
       # - name: Setup tmate session 3 (if failed)
