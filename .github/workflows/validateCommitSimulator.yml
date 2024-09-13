@@ -158,7 +158,7 @@ jobs:
 
       - name: Install BioSimulators Test Suite with Poetry
         shell: bash
-        run: /home/runner/poetry-install-dir/poetry-install-dir/bin/poetry install --all-extras
+        run: /home/runner/poetry-install-dir/bin/poetry install --all-extras
 
       - name: Login into Docker registries
         run: |
