@@ -151,14 +151,14 @@ jobs:
       - name: Install Virtualized Poetry
         shell: bash
         run: |
-          mkdir $HOME/poetry-install-dir
+          mkdir -P /home/runner/poetry-install-dir
           python3.11 -m venv $HOME/poetry-install-dir
-          $HOME/poetry-install-dir/bin/pip install -U pip setuptools
-          $HOME/poetry-install-dir/bin/pip install poetry
+          /home/runner/poetry-install-dir/poetry-install-dir/bin/pip install -U pip setuptools
+          /home/runner/poetry-install-dir/poetry-install-dir/bin/pip install poetry
 
       - name: Install BioSimulators Test Suite with Poetry
         shell: bash
-        run: $HOME/poetry-install-dir/bin/poetry install --all-extras
+        run: /home/runner/poetry-install-dir/poetry-install-dir/bin/poetry install --all-extras
 
       - name: Login into Docker registries
         run: |
@@ -203,7 +203,7 @@ jobs:
           #  python3.11 -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
           working-directory: ${{ github.workspace }}
           run: |
-           $HOME/poetry-install-dir/bin/poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
+           /home/runner/poetry-install-dir/poetry-install-dir/bin/poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
       # If tmate is useful for a particular debugging issue, comment this back in:
       # - name: Setup tmate session 3 (if failed)
