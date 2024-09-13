@@ -151,7 +151,6 @@ jobs:
       - name: Install Virtualized Poetry
         shell: bash
         run: |
-          python3.11 -m pip install venv
           mkdir $HOME/poetry-install-dir
           python3.11 -m venv $HOME/poetry-install-dir
           $HOME/poetry-install-dir/bin/pip install -U pip setuptools
