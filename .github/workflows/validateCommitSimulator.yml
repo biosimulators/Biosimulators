@@ -38,7 +38,10 @@ jobs:
       #    key: ${{ runner.os }}-pip-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.txt') }}-${{ hashFiles('${GITHUB_WORKSPACE}/requirements.optional.txt') }}
       #    restore-keys: |
       #      ${{ runner.os }}-pip-
-
+      - name: Check home var # for BioNetGen
+        run: |
+          echo $HOME
+     
       - name: Install pip and setuptools
         run: |
           python3.11 -m pip install --upgrade setuptools
