@@ -156,6 +156,8 @@ jobs:
         run: |
           mkdir -p /home/runner/poetry-install-dir
           python3.11 -m venv /home/runner/poetry-install-dir
+          ls /home/runner/poetry-install-dir
+          ls /home/runner/poetry-install-dir/bin
           /home/runner/poetry-install-dir/poetry-install-dir/bin/python -m pip install -U pip setuptools
           /home/runner/poetry-install-dir/poetry-install-dir/bin/python -m pip install poetry
 
