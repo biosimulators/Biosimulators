@@ -158,8 +158,8 @@ jobs:
           python3.11 -m venv /home/runner/poetry-install-dir
           ls /home/runner/poetry-install-dir
           ls /home/runner/poetry-install-dir/bin
-          /home/runner/poetry-install-dir/poetry-install-dir/bin/python -m pip install -U pip setuptools
-          /home/runner/poetry-install-dir/poetry-install-dir/bin/python -m pip install poetry
+          /home/runner/poetry-install-dir/bin/python -m pip install -U pip setuptools
+          /home/runner/poetry-install-dir/bin/python -m pip install poetry
 
       - name: Install BioSimulators Test Suite with Poetry
         shell: bash
