@@ -205,6 +205,11 @@ jobs:
           run: |
            /home/runner/poetry-install-dir/bin/poetry run python -c "from biosimulators_test_suite.exec_gh_action import ValidateCommitSimulatorGitHubAction; ValidateCommitSimulatorGitHubAction().run(); exit();"
 
+      - name: Setup tmate session 3 (if failed)
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ failure() }}
+        timeout-minutes: 40
+
       - name: Save test results
         uses: actions/upload-artifact@v4
         if: success() || failure()
