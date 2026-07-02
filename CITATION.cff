@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "BioSimulators"
+type: software
+repository-code: "https://github.com/biosimulators/Biosimulators"
+license: MIT
+doi: 10.5281/zenodo.21127431   # concept DOI (all versions)
+authors:
+  - family-names: "Karr"
+    given-names: "Jonathan R."
+    affiliation: "Icahn School of Medicine at Mount Sinai"
+    orcid: "https://orcid.org/0000-0002-2605-5080"
+  - family-names: "Drescher"
+    given-names: "Logan"
+    affiliation: "University of Connecticut School of Medicine"
+  - family-names: "Smith"
+    given-names: "Lucian P."
+    affiliation: "University of Washington"
+    orcid: "https://orcid.org/0000-0001-7002-6386"
+  - family-names: "Agmon"
+    given-names: "Eran"
+    affiliation: "University of Connecticut School of Medicine"
+    orcid: "https://orcid.org/0000-0003-1279-2474"
+  - family-names: "Moraru"
+    given-names: "Ion I."
+    affiliation: "University of Connecticut School of Medicine"
+    orcid: "https://orcid.org/0000-0002-3746-9676"
