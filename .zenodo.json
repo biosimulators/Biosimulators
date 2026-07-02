@@ -1,0 +1,33 @@
+{
+  "upload_type": "software",
+  "title": "BioSimulators",
+  "license": "mit",
+  "creators": [
+    {
+      "name": "Karr, Jonathan R.",
+      "affiliation": "Icahn School of Medicine at Mount Sinai",
+      "orcid": "0000-0002-2605-5080"
+    },
+    {
+      "name": "Drescher, Logan",
+      "affiliation": "University of Connecticut School of Medicine"
+    },
+    {
+      "name": "Smith, Lucian P.",
+      "affiliation": "University of Washington",
+      "orcid": "0000-0001-7002-6386"
+    },
+    {
+      "name": "Agmon, Eran",
+      "affiliation": "University of Connecticut School of Medicine",
+      "orcid": "0000-0003-1279-2474"
+    },
+    {
+      "name": "Moraru, Ion I.",
+      "affiliation": "University of Connecticut School of Medicine",
+      "orcid": "0000-0002-3746-9676"
+    }
+  ],
+  "description": "<p>BioSimulators is a registry of containerized biosimulation tools that support standard interfaces (COMBINE/OMEX, SBML, SED-ML). It provides consistent command-line and Docker interfaces to make it easier to find, run, and reuse a broad range of simulation tools.</p>",
+  "related_identifiers": []
+}

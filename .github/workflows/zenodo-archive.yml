@@ -1,0 +1,13 @@
+name: Archive release to Zenodo
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  archive:
+    uses: virtualcell/zenodo-maint/.github/workflows/archive.reusable.yml@v1
+    with:
+      tag: ${{ github.event.release.tag_name }}
+    secrets:
+      ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
